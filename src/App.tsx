@@ -52,51 +52,8 @@ function App() {
       </button>
 
       {/* Content */}
-      <div className="text-center max-w-2xl">
-        <h1 className="heading-1 mb-6">Sahand Anvari</h1>
-        <p className="heading-3 text-muted-foreground mb-4">
-          Design Systems Lead
-        </p>
-
-        <div className="h-1 w-24 bg-border mx-auto mb-8" />
-
-        <p className="body-lg text-muted-foreground mb-12 leading-relaxed">
-          Building design infrastructure that lets entire products rebrand by
-          swapping one file.
-          <br />
-          Coming soon with the full story.
-        </p>
-
-        {/* Social links */}
-        <div className="flex gap-6 justify-center">
-          <a
-            href="https://linkedin.com/in/sahand"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/sahandanvari"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            GitHub
-          </a>
-          <a
-            href="mailto:hello@sahandanvari.com"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Email
-          </a>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="fixed bottom-6 text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Sahand Anvari
+      <div className="text-center">
+        <h1 className="heading-1">Will be back soon</h1>
       </div>
     </div>
   );
