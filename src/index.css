@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode colors (oklch) */
+    --background: 0deg 0% 100%;
+    --foreground: 0deg 0% 8.5%;
+    --card: 0deg 0% 98%;
+    --card-foreground: 0deg 0% 8.5%;
+    --primary: 211deg 100% 50%;
+    --primary-foreground: 0deg 0% 100%;
+    --muted: 0deg 0% 96%;
+    --muted-foreground: 0deg 0% 55%;
+    --accent: 0deg 0% 98%;
+    --accent-foreground: 211deg 100% 50%;
+    --border: 0deg 0% 93%;
+
+    /* Typography */
+    --font-display: "Inter", system-ui, sans-serif;
+    --font-heading: "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+
+    /* Type scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --text-7xl: 4.5rem;
+
+    /* Border radius */
+    --radius: 0.625rem;
+    --radius-sm: calc(var(--radius) - 0.25rem);
+    --radius-md: var(--radius);
+    --radius-lg: calc(var(--radius) + 0.25rem);
+    --radius-xl: calc(var(--radius) + 0.5rem);
+    --radius-full: 9999px;
+
+    /* Spacing unit */
+    --spacing-unit: 0.25rem;
+    --spacing-1: var(--spacing-unit);
+    --spacing-2: calc(var(--spacing-unit) * 2);
+    --spacing-3: calc(var(--spacing-unit) * 3);
+    --spacing-4: calc(var(--spacing-unit) * 4);
+    --spacing-6: calc(var(--spacing-unit) * 6);
+    --spacing-8: calc(var(--spacing-unit) * 8);
+    --spacing-12: calc(var(--spacing-unit) * 12);
+    --spacing-16: calc(var(--spacing-unit) * 16);
+    --spacing-24: calc(var(--spacing-unit) * 24);
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 0deg 0% 8.5%;
+    --foreground: 0deg 0% 100%;
+    --card: 0deg 0% 12%;
+    --card-foreground: 0deg 0% 100%;
+    --primary: 211deg 100% 90%;
+    --primary-foreground: 211deg 100% 50%;
+    --muted: 0deg 0% 16%;
+    --muted-foreground: 0deg 0% 70%;
+    --accent: 0deg 0% 14%;
+    --accent-foreground: 0deg 0% 100%;
+    --border: 0deg 0% 20%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .heading-1 {
+    @apply font-display text-7xl font-bold leading-tight;
+  }
+
+  .heading-2 {
+    @apply font-heading text-4xl font-semibold leading-snug;
+  }
+
+  .heading-3 {
+    @apply font-heading text-3xl font-semibold leading-snug;
+  }
+
+  .body-base {
+    @apply font-body text-base leading-relaxed;
+  }
+
+  .body-lg {
+    @apply font-body text-lg leading-relaxed;
+  }
+}
+
+/* Smooth theme transitions */
+.theme-transitioning,
+.theme-transitioning * {
+  transition:
+    color 300ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease !important;
+}
