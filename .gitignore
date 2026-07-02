@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# Personal / local-only — never deploy
+Recording/
+conference/
+new IDS/
+deep-research-report.md

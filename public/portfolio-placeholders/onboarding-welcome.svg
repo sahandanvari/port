@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none" role="img" aria-hidden="true">
+  <title></title>
+  <desc></desc>
+  <defs>
+    <linearGradient id="onb-bg-wash" x1="80" y1="64" x2="720" y2="536" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#F59E0B" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="onb-handshake" x1="336" y1="320" x2="464" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="0.5" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- layer: background (no full-canvas opaque fill — PNG uses transparent margins) -->
+  <g id="background">
+    <!-- bg token: soft focal wash, corners stay clear for transparent export -->
+    <circle cx="400" cy="304" r="248" fill="#F5F3FF" fill-opacity="0.72"/>
+    <rect x="88" y="64" width="624" height="472" rx="16" fill="url(#onb-bg-wash)"/>
+    <circle cx="136" cy="120" r="80" fill="#7C3AED" fill-opacity="0.08"/>
+    <circle cx="656" cy="472" r="96" fill="#F59E0B" fill-opacity="0.1"/>
+    <circle cx="616" cy="128" r="56" fill="#10B981" fill-opacity="0.09"/>
+    <circle cx="120" cy="456" r="64" fill="#7C3AED" fill-opacity="0.06"/>
+  </g>
+
+  <!-- layer: main -->
+  <g id="main">
+    <!-- left figure -->
+    <rect x="216" y="328" width="112" height="144" rx="16" fill="#7C3AED"/>
+    <circle cx="272" cy="256" r="64" fill="#EDE9FE"/>
+    <circle cx="272" cy="256" r="48" fill="#DDD6FE"/>
+    <!-- simple face (no stroke): eyes + smile as fills -->
+    <ellipse cx="256" cy="248" rx="8" ry="10" fill="#111827"/>
+    <ellipse cx="288" cy="248" rx="8" ry="10" fill="#111827"/>
+    <path fill="#111827" d="M256 266q16 14 32 0q-16 10-32 0Z"/>
+    <!-- left arm -->
+    <rect x="176" y="352" width="56" height="40" rx="16" fill="#7C3AED" fill-opacity="0.88" transform="rotate(-24 204 372)"/>
+
+    <!-- right figure -->
+    <rect x="472" y="328" width="112" height="144" rx="16" fill="#F59E0B"/>
+    <circle cx="528" cy="256" r="64" fill="#FEF3C7"/>
+    <circle cx="528" cy="256" r="48" fill="#FDE68A"/>
+    <ellipse cx="512" cy="248" rx="8" ry="10" fill="#111827"/>
+    <ellipse cx="544" cy="248" rx="8" ry="10" fill="#111827"/>
+    <path fill="#111827" d="M512 266q16 14 32 0q-16 10-32 0Z"/>
+    <rect x="568" y="352" width="56" height="40" rx="16" fill="#F59E0B" fill-opacity="0.88" transform="rotate(24 596 372)"/>
+
+    <!-- handshake / join -->
+    <rect x="344" y="296" width="112" height="72" rx="16" fill="url(#onb-handshake)"/>
+    <circle cx="400" cy="320" r="24" fill="#10B981" fill-opacity="0.35"/>
+    <circle cx="400" cy="320" r="16" fill="#10B981" fill-opacity="0.55"/>
+  </g>
+
+  <!-- layer: accents (confetti & highlights) -->
+  <g id="accents">
+    <rect x="120" y="176" width="16" height="32" rx="8" fill="#F59E0B" transform="rotate(12 128 192)"/>
+    <rect x="656" y="200" width="24" height="16" rx="8" fill="#7C3AED" transform="rotate(-18 668 208)"/>
+    <rect x="184" y="120" width="16" height="24" rx="8" fill="#10B981" transform="rotate(-32 192 132)"/>
+    <rect x="600" y="96" width="16" height="32" rx="8" fill="#F59E0B" transform="rotate(28 608 112)"/>
+    <rect x="96" y="320" width="32" height="16" rx="8" fill="#7C3AED" transform="rotate(8 112 328)"/>
+    <rect x="680" y="360" width="16" height="24" rx="8" fill="#10B981" transform="rotate(24 688 372)"/>
+    <circle cx="160" cy="240" r="8" fill="#F59E0B"/>
+    <circle cx="720" cy="280" r="8" fill="#7C3AED"/>
+    <circle cx="200" cy="400" r="8" fill="#10B981"/>
+    <circle cx="640" cy="176" r="8" fill="#10B981"/>
+    <circle cx="560" cy="144" r="8" fill="#F59E0B"/>
+    <circle cx="248" cy="152" r="8" fill="#7C3AED"/>
+    <!-- spark burst -->
+    <rect x="392" y="144" width="16" height="40" rx="8" fill="#F59E0B" fill-opacity="0.85"/>
+    <rect x="392" y="144" width="16" height="40" rx="8" fill="#F59E0B" fill-opacity="0.85" transform="rotate(90 400 164)"/>
+    <rect x="392" y="144" width="16" height="40" rx="8" fill="#F59E0B" fill-opacity="0.7" transform="rotate(45 400 164)"/>
+    <rect x="392" y="144" width="16" height="40" rx="8" fill="#F59E0B" fill-opacity="0.7" transform="rotate(-45 400 164)"/>
+  </g>
+</svg>

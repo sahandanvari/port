@@ -68,4 +68,37 @@ The site will then be live at sahandanvari.com!
 
 ---
 
+## Portfolio assistant (`/api/chat`)
+
+The **Ask** floating button calls a Vercel serverless function at `/api/chat` (see `api/chat.ts`).
+
+1. In the Vercel project → **Settings → Environment Variables**, add:
+   - `OPENAI_API_KEY` — your OpenAI API key (server-side only; not prefixed with `VITE_`).
+2. Redeploy. The assistant uses model `gpt-4o-mini` and returns JSON with `message` and optional `route`.
+
+`vercel.json` rewrites exclude `/api/*` and `/mastermind/*` so the SPA fallback does not swallow API routes or the private mastermind dashboard.
+
+Local `npm run dev` does not run Vercel functions; use `vercel dev` if you need chat locally, or test on a preview deployment.
+
+---
+
+## YouTube Mastermind (`/mastermind`)
+
+Private creator dashboard (hook bank, roadmap, learning guide) at **https://sahandanvari.com/mastermind**.
+
+- Static files live in `public/mastermind/` (built from the Youtube project — see `dashboard/DEPLOY.md` there).
+- `middleware.ts` protects `/mastermind/*` with HTTP Basic Auth.
+- Vercel env vars: `BASIC_AUTH_USER`, `BASIC_AUTH_PASSWORD` (same project as the portfolio).
+
+After updating playbook data in the Youtube repo:
+
+```bash
+cd "/Users/user/Desktop/Sahand Anvari/Youtube/dashboard"
+npm run sync-port
+```
+
+Then commit `public/mastermind/` in this repo and redeploy.
+
+---
+
 Built with ❤️ using React + Vite + Tailwind CSS

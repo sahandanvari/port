@@ -1,0 +1,10 @@
+node_modules
+dist
+Recording
+new IDS
+conference
+docs
+deep-research-report.md
+.git
+.DS_Store
+*.log

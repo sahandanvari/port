@@ -37,6 +37,8 @@ export default {
         "muted-foreground": "hsl(var(--muted-foreground))",
         accent: "hsl(var(--accent))",
         "accent-foreground": "hsl(var(--accent-foreground))",
+        "accent-soft": "hsl(var(--accent-soft))",
+        ring: "hsl(var(--ring))",
         border: "hsl(var(--border))",
       },
     },
