@@ -1,57 +1,64 @@
 <!doctype html>
 <!--
-  Source for public/resume.pdf.
-  Regenerate: open this file in a browser and print to PDF (Letter),
-  or: npx agent-browser open "file://$(pwd)/tools/resume/resume.html" && npx agent-browser pdf public/resume.pdf
-  Single column, real text, no graphics — ATS-parseable by design.
+  Source for public/resume.pdf — keep in sync with:
+  - src/pages/ResumePage.tsx (layout)
+  - src/content/resumePage.ts (summary, skills, credentials, contact)
+  - src/content/experience.ts (experience)
+
+  Regenerate:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless --disable-gpu --no-pdf-header-footer \
+    --print-to-pdf="public/resume.pdf" \
+    "file://$(pwd)/tools/resume/resume.html"
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Sahand Anvari — Product Designer / Design Systems Lead</title>
+<title>Sahand Anvari — Product Designer · Design Systems Lead</title>
 <style>
-  @page { size: letter; margin: 0; }
+  @page { size: letter; margin: 0.75cm 1.1cm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { background: #fff; }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #1a1a1a;
-    font-size: 10.4px;
-    line-height: 1.42;
-    padding: 44px 52px;
+    font-size: 10px;
+    line-height: 1.38;
     max-width: 8.5in;
   }
   header h1 {
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
   .role {
-    margin-top: 3px;
+    margin-top: 4px;
     font-size: 12px;
     font-weight: 600;
     color: #333;
   }
   .contact {
-    margin-top: 5px;
-    font-size: 9.6px;
-    color: #444;
+    margin-top: 4px;
+    font-size: 10px;
+    color: #555;
   }
-  .contact a { color: #444; text-decoration: none; }
+  .contact a { color: #555; text-decoration: underline; }
+  .summary {
+    margin-top: 10px;
+    font-size: 10px;
+    line-height: 1.42;
+    color: #222;
+  }
   section { margin-top: 14px; }
   h2 {
-    font-size: 9.6px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #555;
-    border-bottom: 1px solid #d8d8d8;
-    padding-bottom: 3px;
+    color: #666;
     margin-bottom: 7px;
   }
-  .summary { color: #222; }
-  .skills { color: #222; }
-  .job { margin-bottom: 10px; }
+  .job { margin-bottom: 9px; }
   .job:last-child { margin-bottom: 0; }
   .job-head {
     display: flex;
@@ -59,20 +66,35 @@
     align-items: baseline;
     gap: 12px;
   }
-  .job-head h3 { font-size: 11.2px; font-weight: 700; }
+  .job-head h3 { font-size: 11px; font-weight: 700; }
   .job-head .dates {
-    font-size: 9.6px;
+    font-size: 9.5px;
     color: #555;
     white-space: nowrap;
   }
   .job-sub {
-    font-size: 9.8px;
+    font-size: 10px;
     color: #555;
     margin-top: 1px;
   }
-  ul { margin-top: 4px; padding-left: 14px; }
-  li { margin-bottom: 2.5px; color: #222; }
-  li:last-child { margin-bottom: 0; }
+  ul.bullets { margin-top: 4px; padding-left: 14px; }
+  ul.bullets li { margin-bottom: 2px; color: #222; font-size: 10px; line-height: 1.38; }
+  ul.bullets li:last-child { margin-bottom: 0; }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 0;
+  }
+  .skill {
+    font-size: 9px;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  ul.creds { margin-top: 0; padding-left: 14px; }
+  ul.creds li { margin-bottom: 2px; font-size: 10px; color: #222; }
 </style>
 </head>
 <body>
@@ -80,35 +102,13 @@
     <h1>Sahand Anvari</h1>
     <p class="role">Product Designer · Design Systems Lead</p>
     <p class="contact">
-      Vancouver, BC, Canada &nbsp;·&nbsp; 778-798-0435 &nbsp;·&nbsp;
-      <a href="mailto:sahandanvari@gmail.com">sahandanvari@gmail.com</a> &nbsp;·&nbsp;
-      <a href="https://linkedin.com/in/sahandanvari">linkedin.com/in/sahandanvari</a>
+      Vancouver, BC, Canada &nbsp;·&nbsp;
+      <a href="mailto:sahandanvari@gmail.com">sahandanvari@gmail.com</a>
+    </p>
+    <p class="summary">
+      Product Designer with 5+ years of leadership building and governing multi-brand design systems. I specialize in design tokens, developer-friendly component contracts, and educating teams toward consistent, efficient delivery — most recently making systems AI-ready with machine-readable contracts and agent guardrails. Track record of driving efficiency, fostering collaboration, and staying ahead of industry trends.
     </p>
   </header>
-
-  <section>
-    <h2>Summary</h2>
-    <p class="summary">
-      Product Designer with 5+ years of leadership building, scaling, and governing
-      multi-brand design systems. Deep expertise in design tokens, component libraries,
-      accessibility, and design-to-code workflows; currently focused on AI-ready design
-      infrastructure — machine-readable component contracts, MCP retrieval, and agent
-      guardrails that keep generated UI aligned with production. Track record of driving
-      efficiency, educating teams, and shipping developer-friendly solutions.
-    </p>
-  </section>
-
-  <section>
-    <h2>Core Skills</h2>
-    <p class="skills">
-      Design Systems &amp; Governance · Design Tokens &amp; Theming · Multi-brand / White-label
-      Architecture · Component Libraries &amp; Documentation · Figma (Libraries, Variables, Code
-      Connect) · Storybook · Accessibility (WCAG 2.1 AA) · Design-to-Code Handoff · Developer
-      Experience · AI-Ready Design Infrastructure (MCP, Agent Guardrails) · User Research &amp;
-      Usability Testing · Analytics &amp; Data-Driven Design · Prototyping &amp; Interaction Design ·
-      Information Architecture · Cross-Functional Leadership · Agile Product Delivery
-    </p>
-  </section>
 
   <section>
     <h2>Experience</h2>
@@ -116,63 +116,79 @@
     <div class="job">
       <div class="job-head">
         <h3>Product Designer / Design Systems Lead</h3>
-        <span class="dates">Sep 2022 – Present</span>
+        <span class="dates">Sep 2022 — Present</span>
       </div>
-      <p class="job-sub">Pacific Programming &amp; Tech Inc. — Vancouver, Canada</p>
-      <ul>
-        <li>Lead the design system team, owning two design systems end to end — Aurora for customer-facing products and Luminis for internal apps — including their governance, maintenance, and adoption.</li>
-        <li><strong>Aurora:</strong> designed from scratch — identified the paradigms already living in the products, converted designers' decisions into a systematic language, and shipped it first as a Figma library, then as React components.</li>
-        <li><strong>Aurora:</strong> scaled it into a multi-brand system — design tokens, production components, Storybook, a composition-patterns registry, and a reference website documenting tokens, theming, and patterns — with a white-label token pipeline (Figma → structured JSON → generated theme packages) consumed across React, Vue, and Razor stacks.</li>
-        <li><strong>Luminis:</strong> built the internal-apps system as a shadcn/ui fork so teams and AI tools can build with it directly using familiar conventions, extended with complex application components such as the DataView table and the app sidebar layout.</li>
-        <li>Made both systems agentic and AI-ready: machine-readable component contracts (props, variants, accessibility) exposed through MCP retrieval, plus agent guardrails that prevent AI-generated UI from drifting from production.</li>
-        <li>Crafted the design-to-development handover process — starter kits, office hours, and contribution guidelines — improving collaboration between designers and developers working with the system.</li>
-        <li>Led the design team on the redesign of a massive CRM application for a 700-agent call center; established accessibility tooling and guidelines, and used user-testing platforms and analytics for data-driven design decisions.</li>
+      <p class="job-sub">Pacific Programming &amp; Tech Inc. · Vancouver, Canada</p>
+      <ul class="bullets">
+        <li>Lead the design system team, owning two design systems end to end — Aurora for customer-facing products and Luminis for internal apps — including their management, maintenance, and governance</li>
+        <li>Aurora: designed from scratch — identified the paradigms already living in the products, converted designers' decisions into a systematic language, and shipped it first as a Figma library, then as React components</li>
+        <li>Aurora: scaled it into a multi-brand system — design tokens, production components, Storybook, a composition-patterns registry, and a reference website documenting tokens, theming, and patterns — with a white-label token pipeline (Figma → structured JSON → generated theme packages) consumed across React, Vue, and Razor stacks</li>
+        <li>Luminis: built the internal-apps system as a shadcn/ui fork so teams and AI tools can build with it directly using familiar conventions, extended with complex application components like the DataView table and the app sidebar layout</li>
+        <li>Made both systems agentic and AI-ready: machine-readable component contracts (props, variants, accessibility) with MCP retrieval, plus agent guardrails that keep AI-generated UI from drifting from production</li>
+        <li>Crafted the design-to-development handover process — starter kits, office hours, and contribution guidelines adopted across design and engineering</li>
+        <li>Led the design team on the redesign of a massive CRM application for a 700-agent call center, delivering a user-friendly product that met the center's operational needs</li>
+        <li>Established accessibility tooling and guidelines, and used user-testing platforms and analytics to drive data-driven design decisions</li>
       </ul>
     </div>
 
     <div class="job">
       <div class="job-head">
         <h3>Product Design Lead</h3>
-        <span class="dates">Aug 2021 – Sep 2022</span>
+        <span class="dates">Aug 2021 — Sep 2022</span>
       </div>
-      <p class="job-sub">Lomio Travel — Istanbul, Türkiye</p>
-      <ul>
-        <li>Led the design team on a comprehensive travel-booking product end to end — from ideation to launch — delivering an innovative solution in a highly competitive market.</li>
-        <li>Conducted 200+ interviews with potential users and refined the design solution based on their feedback.</li>
-        <li>Educated and guided the team toward consistent, scalable components, laying the groundwork for a design system launch post-release.</li>
+      <p class="job-sub">Lomio Travel · Istanbul, Türkiye</p>
+      <ul class="bullets">
+        <li>Led the design team on a new travel-booking product end to end — from ideation to launch — in a highly competitive market</li>
+        <li>Conducted 200+ interviews with potential users, refining the design solution based on their feedback</li>
+        <li>Educated and guided the team toward consistent, scalable components, laying the groundwork for a design system launch post-release</li>
       </ul>
     </div>
 
     <div class="job">
       <div class="job-head">
-        <h3>User Experience Designer (Contract)</h3>
-        <span class="dates">Jan 2020 – Sep 2021</span>
+        <h3>User Experience Designer</h3>
+        <span class="dates">Jan 2020 — Sep 2021</span>
       </div>
-      <p class="job-sub">Türksat Satellite Communications — Istanbul, Türkiye</p>
-      <ul>
-        <li>Redesigned the four core websites of Turkey's leading satellite company around a newly redesigned brand identity, ensuring consistency across all online channels while preserving core functionality.</li>
-        <li>Won 2nd place for Best Corporate Website Design 2020 (Altın Örümcek Awards) with the Türksat corporate website, turksat.com.tr.</li>
+      <p class="job-sub">Türksat Satellite Communications · Istanbul, Türkiye</p>
+      <ul class="bullets">
+        <li>Redesigned the four core websites of Turkey's leading satellite company around a newly redesigned brand identity, keeping core functionality intact</li>
+        <li>Won 2nd place for best corporate website design 2020 (Altın Örümcek awards) with the Türksat corporate website, turksat.com.tr</li>
+        <li>Kept the brand identity consistent across all product lines while improving the overall user experience</li>
       </ul>
     </div>
 
     <div class="job">
       <div class="job-head">
         <h3>Design Manager</h3>
-        <span class="dates">Jan 2018 – Sep 2021</span>
+        <span class="dates">Jan 2018 — Sep 2021</span>
       </div>
-      <p class="job-sub">Green Wing Co. W.L.L — Istanbul, Türkiye</p>
-      <ul>
-        <li>Managed and led a design team of 8 building e-commerce websites and a mobile app for a multi-brand fashion company — delivered on time, on budget, and to quality standards.</li>
-        <li>Leveraged user-behavior data from user testing and analytics to improve the user experience and drive conversions.</li>
+      <p class="job-sub">Green Wing Co. W.L.L · Istanbul, Türkiye</p>
+      <ul class="bullets">
+        <li>Managed and led a design team of 8 building e-commerce websites and a mobile app for a multi-brand fashion company — delivered on time, on budget, and to quality standards</li>
+        <li>Leveraged user-behavior data from testing and analytics to improve the user experience and drive conversions</li>
       </ul>
     </div>
   </section>
 
   <section>
-    <h2>Conferences &amp; Awards</h2>
-    <ul>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">Design systems &amp; governance</span>
+      <span class="skill">Design tokens &amp; white labeling</span>
+      <span class="skill">Component contracts &amp; documentation</span>
+      <span class="skill">AI-ready infrastructure (MCP, agent guardrails)</span>
+      <span class="skill">Figma &amp; Code Connect</span>
+      <span class="skill">Accessibility (WCAG)</span>
+      <span class="skill">User research &amp; analytics</span>
+      <span class="skill">Team leadership &amp; education</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Conferences &amp; awards</h2>
+    <ul class="creds">
       <li>Into Design Systems conference — attended three years running (2024, 2025, 2026)</li>
-      <li>2nd place, Best Corporate Website Design 2020 — Altın Örümcek Awards, for the Türksat corporate website (turksat.com.tr)</li>
+      <li>2nd place, best corporate website design 2020 — Altın Örümcek awards, for the Türksat corporate website (turksat.com.tr)</li>
     </ul>
   </section>
 </body>

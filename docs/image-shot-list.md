@@ -42,6 +42,30 @@ These cards are light-touch refreshes. Add `images` to sections when you have ca
 - **asset-gallery** — semantic search UI, cross-repo dedupe view
 - **propper** — hackathon demo UI, audit report sample
 
+## Videos (short demos)
+
+Same `images[]` entries support optional `videoSrc`:
+
+| Field | Role |
+| --- | --- |
+| `src` | Poster JPG/WebP (also used when `prefers-reduced-motion`) |
+| `videoSrc` | `/work/{slug}/…mp4` — muted, looped, autoplay in the frame |
+| `fit: "contain"` | Prefer for UI screen recordings |
+
+Example:
+
+```ts
+{
+  label: "MCP demo: sketch → responsive Aurora dialog",
+  aspect: "wide",
+  src: "/work/mcp/dialog-demo-poster.jpg",
+  videoSrc: "/work/mcp/dialog-demo.mp4",
+  fit: "contain",
+}
+```
+
+Homepage work row: set `heroMedia` on the case study object (see `public/work/README.md`).
+
 ## Suggested file naming
 
 ```

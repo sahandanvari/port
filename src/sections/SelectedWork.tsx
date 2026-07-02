@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { SectionWrapper } from "@/components/SectionWrapper";
+import { CaseStudyMedia } from "@/components/CaseStudyMedia";
 import { caseStudies } from "@/content/case-studies";
 import type { CaseStudy } from "@/content/case-studies/types";
 
 function WorkRow({ study }: { study: CaseStudy }) {
   const role = study.workRole ?? "Design system lead";
-  const placeholderLabel = `Screenshot: ${study.title}`;
+  const hero = study.heroMedia;
+  const hasMedia = Boolean(hero?.src || hero?.videoSrc);
 
   return (
     <article className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-8 lg:gap-12 py-12 md:py-14 border-b border-border last:border-b-0">
@@ -14,15 +16,28 @@ function WorkRow({ study }: { study: CaseStudy }) {
         className="group block relative aspect-video w-full overflow-hidden rounded-xl border border-border bg-muted/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         aria-label={`Open case study: ${study.title}`}
       >
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-6 text-center">
-          <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
-            [Add screenshot]
-          </span>
-          <span className="text-xs text-muted-foreground leading-snug max-w-sm">
-            {placeholderLabel}. Hero, docs, or product frame that shows the
-            system in context. Private assets OK with caption.
-          </span>
-        </div>
+        {hasMedia ? (
+          <CaseStudyMedia
+            label={`Screenshot: ${study.title}`}
+            aspect="wide"
+            src={hero?.src}
+            videoSrc={hero?.videoSrc}
+            alt={hero?.alt ?? study.title}
+            fit={hero?.fit ?? "cover"}
+            className="absolute inset-0 h-full w-full bg-muted/30 object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-6 text-center">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+              [Add screenshot or demo]
+            </span>
+            <span className="text-xs text-muted-foreground leading-snug max-w-sm">
+              Hero frame for {study.title}. Set{" "}
+              <code className="text-[10px]">heroMedia</code> on the case study —
+              image, video, or both (poster + loop).
+            </span>
+          </div>
+        )}
         <span
           className="pointer-events-none absolute bottom-3 right-3 rounded-md bg-background/90 px-2 py-1 text-[10px] font-medium text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
           aria-hidden

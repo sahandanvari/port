@@ -9,9 +9,21 @@ export interface CaseStudySectionImage {
   /** What to capture — shown in placeholder until src is set */
   label: string;
   aspect: CaseStudyImageAspect;
-  /** Path under /public when available */
+  /** Image path under /public, or poster when videoSrc is set */
   src?: string;
+  /** Short looped demo (10–20s). Muted autoplay; poster falls back on reduced motion. */
+  videoSrc?: string;
   alt?: string;
+  /** UI captures often read better with contain */
+  fit?: "cover" | "contain";
+}
+
+/** Hero thumbnail on the homepage work list */
+export interface CaseStudyHeroMedia {
+  src?: string;
+  videoSrc?: string;
+  alt: string;
+  fit?: "cover" | "contain";
 }
 
 export interface CaseStudySection {
@@ -56,6 +68,8 @@ export interface CaseStudy {
   teaser: string;
   /** Role label for homepage work row (aside pill). */
   workRole?: string;
+  /** Optional hero image or autoplay demo on the homepage work list */
+  heroMedia?: CaseStudyHeroMedia;
   metrics: Metric[];
   atAGlance: AtAGlance;
   artifacts: CaseStudyArtifact[];
