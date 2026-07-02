@@ -1,0 +1,463 @@
+{
+  "patterns_by_track": {
+    "skill_on_camera": {
+      "other": 42,
+      "how_to": 21,
+      "number_list": 3,
+      "warning": 2
+    },
+    "success_general": {
+      "other": 35,
+      "how_to": 18,
+      "number_list": 8,
+      "i_did": 2,
+      "why": 1
+    },
+    "non_english_compare": {
+      "other": 3,
+      "number_list": 1
+    },
+    "style_benchmark": {
+      "local_place": 50,
+      "other": 14,
+      "question": 5,
+      "warning": 1,
+      "number_list": 1
+    },
+    "skill_ai_editing": {
+      "other": 40,
+      "how_to": 25,
+      "i_did": 2,
+      "number_list": 1
+    },
+    "farsi_creators": {
+      "farsi_script": 65,
+      "other": 3,
+      "number_list": 1,
+      "local_place": 1,
+      "question": 1
+    },
+    "skill_ai_growth": {
+      "other": 40,
+      "how_to": 14,
+      "number_list": 5,
+      "i_did": 3,
+      "question": 3,
+      "warning": 3,
+      "why": 1
+    },
+    "skill_monetization": {
+      "other": 23,
+      "how_to": 4,
+      "number_list": 1,
+      "why": 1
+    }
+  },
+  "examples": {
+    "skill_on_camera:how_to": [
+      {
+        "title": "How to Speak So That People Want to Listen | Julian Treasure | TED",
+        "views": 49950694,
+        "url": "https://www.youtube.com/watch?v=eIho2S0ZahI"
+      },
+      {
+        "title": "How To Naturally Read a Video Script (Without Doing One Million Takes)",
+        "views": 697634,
+        "url": "https://www.youtube.com/watch?v=M6kMVQXzOWY"
+      },
+      {
+        "title": "How to Read a Teleprompter without Looking Creepy",
+        "views": 555242,
+        "url": "https://www.youtube.com/watch?v=tjfyM2k6Gg4"
+      }
+    ],
+    "success_general:how_to": [
+      {
+        "title": "How to stop screwing yourself over | Mel Robbins | TEDxSF",
+        "views": 34521140,
+        "url": "https://www.youtube.com/watch?v=Lp7E973zozc"
+      },
+      {
+        "title": "How to practice effectively...for just about anything - Annie Bosler and Don Greene",
+        "views": 14955585,
+        "url": "https://www.youtube.com/watch?v=f2O6mQkFiiw"
+      },
+      {
+        "title": "How to Earn Money on YouTube: 6 Tips for Beginners",
+        "views": 10734691,
+        "url": "https://www.youtube.com/watch?v=pwe-xW8-rHg"
+      }
+    ],
+    "success_general:other": [
+      {
+        "title": "How the food you eat affects your brain - Mia Nacamulli",
+        "views": 21316787,
+        "url": "https://www.youtube.com/watch?v=xyQY8a-ng6g"
+      },
+      {
+        "title": "Back-To-School Essentials | Sandy Hook Promise",
+        "views": 12415747,
+        "url": "https://www.youtube.com/watch?v=b5ykNZl9mTQ"
+      },
+      {
+        "title": "CarryMinati's REAL Story, Meet Ajey Nagar | YouTube Journey, Success, Fame | The Ranveer Show",
+        "views": 11231083,
+        "url": "https://www.youtube.com/watch?v=7W9X6b8THp8"
+      }
+    ],
+    "success_general:number_list": [
+      {
+        "title": "5 tips to improve your critical thinking - Samantha Agoos",
+        "views": 11728790,
+        "url": "https://www.youtube.com/watch?v=dItUGF8GdTw"
+      },
+      {
+        "title": "3 tips to boost your confidence - TED-Ed",
+        "views": 11229105,
+        "url": "https://www.youtube.com/watch?v=l_NYrWqUR40"
+      },
+      {
+        "title": "7 Video Editing Tips to Get 1,000,000+ Views on Shorts & Reels | CapCut Tutorial",
+        "views": 579782,
+        "url": "https://www.youtube.com/watch?v=dn9WHInXzGM"
+      }
+    ],
+    "non_english_compare:number_list": [
+      {
+        "title": "21 दिन में English सीखने का सम्पूर्ण ज्ञान | Suman Sharma| @SerenePaathshalaOfficial |Josh Talks",
+        "views": 10350455,
+        "url": "https://www.youtube.com/watch?v=g9htko_PXt4"
+      }
+    ],
+    "skill_on_camera:other": [
+      {
+        "title": "You are contagious | Vanessa Van Edwards | TEDxLondon",
+        "views": 6442053,
+        "url": "https://www.youtube.com/watch?v=cef35Fk7YD8"
+      },
+      {
+        "title": "ProLine Plus | Reimagined - Professional and Modular Teleprompter | www.PrompterPeople.com",
+        "views": 3235769,
+        "url": "https://www.youtube.com/watch?v=tjfGvsYIlqI"
+      },
+      {
+        "title": "Public Speaking For Beginners",
+        "views": 2614476,
+        "url": "https://www.youtube.com/watch?v=i5mYphUoOCs"
+      }
+    ],
+    "non_english_compare:other": [
+      {
+        "title": "The End Of Rahul…🥺 | कहानी अब खत्म हुई | Game Over…☠️ | Day 92",
+        "views": 5113560,
+        "url": "https://www.youtube.com/watch?v=y2nf3p6z38M"
+      },
+      {
+        "title": "Noun Ka Brahmhastra | सीखिए All Types of Nouns, Kanchan English Connection Grammar Class | 8 Types",
+        "views": 1912014,
+        "url": "https://www.youtube.com/watch?v=AGIG-g_aOqY"
+      }
+    ],
+    "style_benchmark:warning": [
+      {
+        "title": "Billionaire's WARNING: I'm SELLING. The Crash Is Already Here!",
+        "views": 4804985,
+        "url": "https://www.youtube.com/watch?v=32u5T6lO8qk"
+      }
+    ],
+    "skill_on_camera:warning": [
+      {
+        "title": "TED's secret to great public speaking | Chris Anderson | TED",
+        "views": 3551015,
+        "url": "https://www.youtube.com/watch?v=-FOCpMAww28"
+      }
+    ],
+    "skill_ai_editing:other": [
+      {
+        "title": "AI Documentary Video Making Tutorial✅ | Free Tools, No Watermark!",
+        "views": 2872310,
+        "url": "https://www.youtube.com/watch?v=blfsxN8NxrE"
+      },
+      {
+        "title": "You’re not behind (yet): How to learn AI in 18 minutes",
+        "views": 2177258,
+        "url": "https://www.youtube.com/watch?v=0Tch0N5nsRU"
+      },
+      {
+        "title": "Create with Flow | How to use Google’s AI Creative Studio",
+        "views": 968189,
+        "url": "https://www.youtube.com/watch?v=oKjDeMtBZ4g"
+      }
+    ],
+    "farsi_creators:other": [
+      {
+        "title": "What's Iran's strategy? | Israeli-US war on Iran explained",
+        "views": 2766775,
+        "url": "https://www.youtube.com/watch?v=ePR76pH8RK4"
+      },
+      {
+        "title": "US-Israeli war on Iran: built on lies? | Mehdi Hasan and David Des Roches | Head to Head",
+        "views": 940504,
+        "url": "https://www.youtube.com/watch?v=EXDH-arOIuI"
+      }
+    ],
+    "style_benchmark:other": [
+      {
+        "title": "The Steam Controller is Here",
+        "views": 2352543,
+        "url": "https://www.youtube.com/watch?v=MpJB7LTs5_s"
+      },
+      {
+        "title": "Urban Designer Answers City Planning Questions From Twitter | Tech Support | WIRED",
+        "views": 1649500,
+        "url": "https://www.youtube.com/watch?v=ldtUrIco_rk"
+      },
+      {
+        "title": "A ‘Special’ Solution to the Housing Crisis: Uytae Lee's Stories About Here",
+        "views": 282917,
+        "url": "https://www.youtube.com/watch?v=Zr18Su01YHE"
+      }
+    ],
+    "skill_ai_growth:other": [
+      {
+        "title": "AI will accelerate growth | 2026 Vanguard Economic and Market Outlook",
+        "views": 2030129,
+        "url": "https://www.youtube.com/watch?v=j12OcbQ8zF8"
+      },
+      {
+        "title": "👉Ai Shorts का New Channel बनाकर Grow करना है तो ये Trick लगाओ | Ai Video Kaise Banaye | ai video",
+        "views": 1152032,
+        "url": "https://www.youtube.com/watch?v=pk0Ptj099-4"
+      },
+      {
+        "title": "ChatGPT Secrets to Go VIRAL on YouTube | FULL COURSE 2026",
+        "views": 863761,
+        "url": "https://www.youtube.com/watch?v=HmgmPfOEPKw"
+      }
+    ],
+    "skill_ai_editing:i_did": [
+      {
+        "title": "I BLEW UP a YouTube Channel in 7 Days with AI",
+        "views": 2025190,
+        "url": "https://www.youtube.com/watch?v=1r0eyM7suUg"
+      },
+      {
+        "title": "I BLEW UP a YouTube Channel in 24 Hours with AI",
+        "views": 766679,
+        "url": "https://www.youtube.com/watch?v=za2VyvLl5T0"
+      }
+    ],
+    "skill_ai_growth:i_did": [
+      {
+        "title": "I BLEW UP a YouTube Channel in 7 Days with AI",
+        "views": 2025190,
+        "url": "https://www.youtube.com/watch?v=1r0eyM7suUg"
+      },
+      {
+        "title": "I BLEW UP a YouTube Channel in 24 Hours with AI",
+        "views": 766679,
+        "url": "https://www.youtube.com/watch?v=za2VyvLl5T0"
+      },
+      {
+        "title": "I made an AI YouTube channel to see if it's \"ez money\"",
+        "views": 150588,
+        "url": "https://www.youtube.com/watch?v=86uhtzH9_Os"
+      }
+    ],
+    "style_benchmark:local_place": [
+      {
+        "title": "The $2BN Megaproject Under Vancouver",
+        "views": 1387756,
+        "url": "https://www.youtube.com/watch?v=D4YFFtTEUQc"
+      },
+      {
+        "title": "A quick tour of the UBC Vancouver campus",
+        "views": 251873,
+        "url": "https://www.youtube.com/watch?v=Iw9u5XO2uf0"
+      },
+      {
+        "title": "Vancouver Housing Might Actually Become Affordable Now?",
+        "views": 232000,
+        "url": "https://www.youtube.com/watch?v=yRY1L4X3JqY"
+      }
+    ],
+    "skill_ai_editing:how_to": [
+      {
+        "title": "How To Create Long AI Videos FREE | AI Se Lambe Video Kaise Banaye|FREE AI Video Generator|Ritika AI",
+        "views": 1273390,
+        "url": "https://www.youtube.com/watch?v=eh4k_oGqUKw"
+      },
+      {
+        "title": "How to Make Cartoon Videos with AI (Full Tutorial)",
+        "views": 719790,
+        "url": "https://www.youtube.com/watch?v=BnquzIGVuKc"
+      },
+      {
+        "title": "How to Make an Animated Video Using Canva and AI (Free & Easy)",
+        "views": 471678,
+        "url": "https://www.youtube.com/watch?v=Lg68e1CLAtc"
+      }
+    ],
+    "farsi_creators:farsi_script": [
+      {
+        "title": "Say Who?🤯 | قسمت چهارم",
+        "views": 1226008,
+        "url": "https://www.youtube.com/watch?v=BUnG_ByCr_U"
+      },
+      {
+        "title": "دوبلورهای حرفه‌ای دربرابر یوتوبرها🔥",
+        "views": 789142,
+        "url": "https://www.youtube.com/watch?v=UAFRPnYVr0E"
+      },
+      {
+        "title": "اولین ویدیو یوتیوبر های ایرانی 😍🤣",
+        "views": 348889,
+        "url": "https://www.youtube.com/watch?v=5sq9fkMpBCU"
+      }
+    ],
+    "skill_monetization:other": [
+      {
+        "title": "How Much I Make On Youtube With 100k Subscribers (Adsense, Sponsors, Patreon, Affiliates)",
+        "views": 689359,
+        "url": "https://www.youtube.com/watch?v=jO2aUbOUleI"
+      },
+      {
+        "title": "HOW MUCH DO GAMBLING SPONSORS PAY? | TDM_Heyzeus",
+        "views": 146985,
+        "url": "https://www.youtube.com/watch?v=8K04C4euzmE"
+      },
+      {
+        "title": "How Sponsorships Work On YouTube // What you need to know about paid sponsorships (beginner's guide)",
+        "views": 133591,
+        "url": "https://www.youtube.com/watch?v=7LFJEWXf1qE"
+      }
+    ],
+    "success_general:i_did": [
+      {
+        "title": "I Studied 1,000 Hooks, Here’s How to ACTUALLY Go Viral",
+        "views": 629717,
+        "url": "https://www.youtube.com/watch?v=Xqy9L-88wcw"
+      }
+    ],
+    "skill_ai_growth:how_to": [
+      {
+        "title": "How to start a YT channel in 2026 | AI replaced Algorithm",
+        "views": 393422,
+        "url": "https://www.youtube.com/watch?v=F0m-CxIFaH8"
+      },
+      {
+        "title": "How To Clone Any YouTube Channel With Claude AI (Full Automation)",
+        "views": 345256,
+        "url": "https://www.youtube.com/watch?v=2V9JNN2M6c0"
+      },
+      {
+        "title": "How to Make Ghibli Style AI Videos for YouTube Automation (Step-by-Step Tutorial)",
+        "views": 237071,
+        "url": "https://www.youtube.com/watch?v=0vYU1sQ9x0U"
+      }
+    ],
+    "success_general:why": [
+      {
+        "title": "Why Your Views Die After 48 Hours (and how to fix it)",
+        "views": 293610,
+        "url": "https://www.youtube.com/watch?v=37ylyxQPj0I"
+      }
+    ],
+    "skill_ai_editing:number_list": [
+      {
+        "title": "9 FREE* AI Tools 🔥AI Videos ✅ Image to Video #ai #aivideo",
+        "views": 249416,
+        "url": "https://www.youtube.com/watch?v=Yfyo6-1epSg"
+      }
+    ],
+    "skill_ai_growth:number_list": [
+      {
+        "title": "7 DAYS Challenge ( Unbelievable Result 🔥) Using Ai Shorts:)",
+        "views": 244352,
+        "url": "https://www.youtube.com/watch?v=IAsc2B-EiB8"
+      },
+      {
+        "title": "24 HOURS Challenge ( Shoking Result ) Using Ai",
+        "views": 161058,
+        "url": "https://www.youtube.com/watch?v=EDNWUxCrfJ8"
+      },
+      {
+        "title": "7 High RPM USA Faceless YouTube Channel Ideas Dominating in 2026 | ai se video kaise banaye 🤑",
+        "views": 129216,
+        "url": "https://www.youtube.com/watch?v=otVEbZ9UU2E"
+      }
+    ],
+    "style_benchmark:question": [
+      {
+        "title": "The Most European City In North America, But Does That Make It Great?",
+        "views": 241219,
+        "url": "https://www.youtube.com/watch?v=44WjnCYFPpw"
+      },
+      {
+        "title": "Vancouver Housing Might Actually Become Affordable Now?",
+        "views": 232000,
+        "url": "https://www.youtube.com/watch?v=yRY1L4X3JqY"
+      }
+    ],
+    "skill_ai_growth:question": [
+      {
+        "title": "Can AI supercharge global economic growth?",
+        "views": 137501,
+        "url": "https://www.youtube.com/watch?v=cgEw5HPOokk"
+      },
+      {
+        "title": "YouTube's Algorithm Update Just Changed The AI Rules For Faceless Channels in 2026…!?",
+        "views": 94260,
+        "url": "https://www.youtube.com/watch?v=INc0OY4jv4U"
+      },
+      {
+        "title": "AI Creators सावधान ⚠️ YouTube 2026 Policy Update | Monetize Hoga?",
+        "views": 59160,
+        "url": "https://www.youtube.com/watch?v=n9dk8ouP_PE"
+      }
+    ],
+    "skill_on_camera:number_list": [
+      {
+        "title": "10 secrets: HOW TO READ A SCRIPT While Looking into the Camera",
+        "views": 130828,
+        "url": "https://www.youtube.com/watch?v=B59wGJXrG7M"
+      },
+      {
+        "title": "2 hacks to read a script while looking into the camera",
+        "views": 95099,
+        "url": "https://www.youtube.com/watch?v=RBHSDV3WzFg"
+      },
+      {
+        "title": "5 EASY Tricks to Confidently Talk to the Camera  | Drishti Sharma",
+        "views": 52506,
+        "url": "https://www.youtube.com/watch?v=rtHpZZZavw0"
+      }
+    ],
+    "farsi_creators:number_list": [
+      {
+        "title": "۲۴ با فرداد فرحزاد: رمزگشایی از توافق تهران و واشینگتن با آغاز شمارس معکوس ۶۰ روزه",
+        "views": 112221,
+        "url": "https://www.youtube.com/watch?v=GsibWvi5aK0"
+      }
+    ],
+    "farsi_creators:local_place": [],
+    "skill_ai_growth:warning": [],
+    "skill_ai_growth:why": [],
+    "skill_monetization:how_to": [],
+    "farsi_creators:question": [],
+    "style_benchmark:number_list": [],
+    "skill_monetization:number_list": [],
+    "skill_monetization:why": []
+  },
+  "global_top_patterns": {
+    "other": 205,
+    "how_to": 84,
+    "farsi_script": 66,
+    "local_place": 55,
+    "number_list": 21,
+    "question": 9,
+    "warning": 6,
+    "i_did": 5,
+    "why": 3
+  }
+}

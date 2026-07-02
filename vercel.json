@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/mastermind", "destination": "/mastermind/index.html" },
+    {
+      "source": "/((?!api/|mastermind).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

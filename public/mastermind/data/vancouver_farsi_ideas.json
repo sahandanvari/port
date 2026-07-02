@@ -1,0 +1,62 @@
+[
+  {
+    "topic": "urban planning",
+    "english_coverage": 67,
+    "farsi_coverage": 0,
+    "gap_score": 67,
+    "priority": "high",
+    "title_fa": "چرا ونکوور شبیه هیچ شهر دیگری نیست؟ طراحی شهری به فارسی",
+    "format": "8–12 min video essay",
+    "style_ref": "About Here / The B1M pacing"
+  },
+  {
+    "topic": "neighbourhoods",
+    "english_coverage": 61,
+    "farsi_coverage": 4,
+    "gap_score": 57,
+    "priority": "high",
+    "title_fa": "کدام محله ونکوور برای خانواده ایرانی بهتر است؟",
+    "format": "8–12 min video essay",
+    "style_ref": "About Here / The B1M pacing"
+  },
+  {
+    "topic": "infrastructure",
+    "english_coverage": 52,
+    "farsi_coverage": 4,
+    "gap_score": 48,
+    "priority": "high",
+    "title_fa": "پروژه‌های عظیم زیر ونکوور که از آن‌ها خبر ندارید",
+    "format": "8–12 min video essay",
+    "style_ref": "About Here / The B1M pacing"
+  },
+  {
+    "topic": "housing",
+    "english_coverage": 49,
+    "farsi_coverage": 2,
+    "gap_score": 47,
+    "priority": "high",
+    "title_fa": "بحران مسکن ونکوور از نگاه یک تازه‌وارد ایرانی",
+    "format": "8–12 min video essay",
+    "style_ref": "About Here / The B1M pacing"
+  },
+  {
+    "topic": "transit",
+    "english_coverage": 26,
+    "farsi_coverage": 1,
+    "gap_score": 25,
+    "priority": "high",
+    "title_fa": "چرا اسکای‌ترین ونکوور اینقدر گران ساخته شد؟ (مقایسه با شهرهای دیگر)",
+    "format": "8–12 min video essay",
+    "style_ref": "About Here / The B1M pacing"
+  },
+  {
+    "topic": "immigrant life",
+    "english_coverage": 0,
+    "farsi_coverage": 14,
+    "gap_score": -14,
+    "priority": "low",
+    "title_fa": "اولین ماه در ونکوور: چیزهایی که بهت نمی‌گویند",
+    "format": "8–12 min video essay",
+    "style_ref": "About Here / The B1M pacing"
+  }
+]
