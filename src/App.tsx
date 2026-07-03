@@ -13,11 +13,13 @@ import { AmbientBackground } from "@/components/AmbientBackground";
 import { PortfolioLayout } from "@/components/PortfolioLayout";
 import { PortfolioChromeProvider } from "@/context/PortfolioChromeContext";
 import { UnderConstructionBanner } from "@/components/UnderConstructionBanner";
+import { AnalyticsListener } from "@/components/AnalyticsListener";
 
 function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <AnalyticsListener />
         <PortfolioChromeProvider>
           <AmbientBackground />
           <GlassNav />
@@ -30,6 +32,10 @@ function App() {
               <Route
                 path="/work/starter-kit"
                 element={<Navigate to="/work/luminis" replace />}
+              />
+              <Route
+                path="/work/audit"
+                element={<Navigate to="/work/asset-gallery" replace />}
               />
               <Route path="/writing" element={<WritingIndexPage />} />
               <Route path="/writing/:slug" element={<WritingPostPage />} />

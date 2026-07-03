@@ -94,7 +94,7 @@ export const featuredCaseSlugs = [
   "luminis",
   "multibrand",
   "adoption",
-  "audit",
+  "asset-gallery",
 ] as const;
 
 export function getFeaturedCaseStudies() {

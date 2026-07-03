@@ -4,6 +4,11 @@ export const multibrand: CaseStudy = {
   slug: "multibrand",
   title: "Multibrand theming",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/multibrand/multibrand-theming.png",
+    alt: "Multibrand theming — same components with swappable theme packages across brands",
+    fit: "cover",
+  },
   teaser:
     "I made brand independence a deployment concern: ~40 color decisions per brand, twelve theme packages, one theme.css swap — React, Vue, Razor, and widgets unchanged.",
   metrics: [
@@ -69,7 +74,7 @@ export const multibrand: CaseStudy = {
       title: "Consumer contract",
       language: "html",
       code: `<!-- Each deployment points at one theme file — no runtime theme switching in ops -->
-<link rel="stylesheet" href="https://cdn.example.com/themes/wiseguy-rounded-casino/tailwind/theme.css" />`,
+<link rel="stylesheet" href="https://cdn.example.com/themes/brand-alpha-rounded/tailwind/theme.css" />`,
     },
   ],
   relatedWork: ["token-pipeline", "aurora", "adoption"],
@@ -83,9 +88,11 @@ export const multibrand: CaseStudy = {
       body: "Brand independence is not infinite choice. I scoped roughly forty color decisions per brand — mapped into fifty-five semantic color names in Token Studio, forty if you exclude alpha-only roles used for overlays and scrims.\n\nDesigners work from a decision worksheet (primary, surfaces, borders, CTA stacks, nav chrome) rather than repainting every component. Three visual levers stay independent: palette, typeface, radius. Components bind to semantic roles; brands remap aliases.\n\nThat constraint is what made twelve packages achievable without twelve parallel libraries.",
       images: [
         {
-          label:
-            "Theme switcher: Base vs SlotsParadise vs Contigo on the same component page",
+          label: "Theme switcher: same components across three brand packages",
           aspect: "wide",
+          src: "/work/multibrand/multibrand-theming.png",
+          alt: "Multibrand theming — same components with swappable theme packages across brands",
+          fit: "contain",
         },
       ],
     },

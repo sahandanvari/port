@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Back soon — Sahand Anvari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        color: #f2f2f2;
+        background: #0a0a0a;
+        display: grid;
+        place-items: center;
+        padding: 2rem 1.25rem;
+      }
+
+      .bg {
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 20% 10%, rgba(120, 120, 140, 0.18), transparent),
+          radial-gradient(ellipse 70% 50% at 80% 90%, rgba(90, 90, 110, 0.14), transparent),
+          #0a0a0a;
+        z-index: -1;
+      }
+
+      .card {
+        width: min(28rem, 100%);
+        padding: 2.25rem 2rem 2rem;
+        border-radius: 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(22, 22, 24, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.06) inset,
+          0 24px 48px rgba(0, 0, 0, 0.35);
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin: 0 0 1rem;
+      }
+
+      h1 {
+        font-family: "Syne", system-ui, sans-serif;
+        font-size: clamp(1.5rem, 4vw, 1.875rem);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin: 0 0 1rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.62);
+      }
+
+      .date {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.5rem 0.875rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .pulse {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: #a3a3a3;
+        margin: 0 auto 1.25rem;
+        box-shadow: 0 0 0 0 rgba(163, 163, 163, 0.5);
+        animation: pulse 2s ease-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(163, 163, 163, 0.45);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(163, 163, 163, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(163, 163, 163, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <main class="card">
+      <div class="pulse" aria-hidden="true"></div>
+      <p class="eyebrow">Portfolio upgrade</p>
+      <h1>Making some upgrades</h1>
+      <p>
+        I&rsquo;m refreshing the site and will be back soon&nbsp;&mdash; latest by
+        <strong style="color: rgba(255, 255, 255, 0.88); font-weight: 600"
+          >Monday, July&nbsp;6</strong
+        >.
+      </p>
+      <span class="date">Thank you for your patience</span>
+    </main>
+  </body>
+</html>

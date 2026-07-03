@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f8f8"/>
+      <stop offset="100%" stop-color="#efefef"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)" rx="16"/>
+  
+  <text x="40" y="44" fill="#111" font-family="system-ui,sans-serif" font-size="18" font-weight="700">12 roles / one algorithm</text>
+  <rect x="40" y="80" width="200" height="360" rx="12" fill="#fff" stroke="#ddd"/>
+  <text x="60" y="120" fill="#444" font-family="monospace" font-size="12">primary</text>
+  <text x="60" y="150" fill="#444" font-family="monospace" font-size="12">cta-1 ... cta-3</text>
+  <text x="60" y="180" fill="#444" font-family="monospace" font-size="12">transparent</text>
+  <text x="60" y="210" fill="#444" font-family="monospace" font-size="12">nav-transparent</text>
+  
+  <rect x="280" y="80" width="300" height="360" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="300" y="112" fill="#111" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Generator</text>
+  <text x="300" y="138" fill="#666" font-family="system-ui,sans-serif" font-size="13">Solid: L +/-10 / +/-20</text>
+  <text x="300" y="160" fill="#666" font-family="system-ui,sans-serif" font-size="13">Transparent: alpha overlay</text>
+  <text x="300" y="182" fill="#666" font-family="system-ui,sans-serif" font-size="13">inv- mirror per theme</text>
+  
+  <rect x="620" y="80" width="300" height="360" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="640" y="112" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Interaction Builder</text>
+  <text x="640" y="138" fill="#666" font-family="system-ui,sans-serif" font-size="13">Live preview</text>
+  <text x="640" y="160" fill="#666" font-family="system-ui,sans-serif" font-size="13">Workshop URL</text>
+  <text x="640" y="182" fill="#666" font-family="system-ui,sans-serif" font-size="13">PR 18417</text>
+</svg>

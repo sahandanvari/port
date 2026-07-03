@@ -8,7 +8,10 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { meta } from "@/content/meta";
-import { usePortfolioChrome } from "@/context/PortfolioChromeContext";
+import {
+  THEME_STUDIO_SEEN_KEY,
+  usePortfolioChrome,
+} from "@/context/PortfolioChromeContext";
 import { PortfolioBrowseNav } from "@/components/PortfolioRightNav";
 import { uiEnter, uiExit } from "@/lib/motion";
 
@@ -92,61 +95,38 @@ function HeaderIconButton({
   );
 }
 
-const STUDIO_SEEN_KEY = "theme-studio-seen";
+const STUDIO_SEEN_KEY = THEME_STUDIO_SEEN_KEY;
 
-/** Theme studio (incl. light/dark) and Ask assistant — one cluster. */
+/** Theme studio (incl. light/dark) — header palette control. */
 function HeaderActions() {
-  const { toggleThemePanel, themePanelOpen } = usePortfolioChrome();
-  const reduceMotion = useReducedMotion();
-  // Pulse the palette icon until the studio has been opened once
+  const {
+    toggleThemePanel,
+    themePanelOpen,
+    dismissThemeStudioIntro,
+    themeStudioIntro,
+  } = usePortfolioChrome();
   const [studioSeen, setStudioSeen] = useState(
     () => localStorage.getItem(STUDIO_SEEN_KEY) === "1",
   );
-  // First visit: after a beat, a little "Try me" tooltip appears by itself
-  const [tryMeOpen, setTryMeOpen] = useState(false);
-
-  useEffect(() => {
-    if (studioSeen) return;
-    const show = setTimeout(() => setTryMeOpen(true), 1600);
-    return () => clearTimeout(show);
-  }, [studioSeen]);
 
   const markSeen = () => {
     localStorage.setItem(STUDIO_SEEN_KEY, "1");
     setStudioSeen(true);
-    setTryMeOpen(false);
+    dismissThemeStudioIntro();
   };
 
   const openStudio = () => {
-    toggleThemePanel();
+    if (!themePanelOpen) toggleThemePanel();
     markSeen();
   };
 
   return (
-    <div className="relative flex shrink-0 items-center gap-0.5">
-      <AnimatePresence>
-        {tryMeOpen && !themePanelOpen ? (
-          <motion.span
-            role="status"
-            initial={
-              reduceMotion ? { opacity: 0 } : { opacity: 0, y: -5, scale: 0.9 }
-            }
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={
-              reduceMotion ? { opacity: 0 } : { opacity: 0, y: -4, scale: 0.94 }
-            }
-            transition={uiEnter}
-            className="glass pointer-events-none absolute right-0 top-full z-20 mt-2.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-medium text-foreground"
-          >
-            Try me
-          </motion.span>
-        ) : null}
-      </AnimatePresence>
+    <div className="relative flex shrink-0 items-center">
       <HeaderIconButton
         label="Theme studio — colors, fonts, light/dark"
         onClick={openStudio}
         expanded={themePanelOpen}
-        badge={!studioSeen}
+        badge={!studioSeen || themeStudioIntro}
       >
         <svg
           className="h-4 w-4"

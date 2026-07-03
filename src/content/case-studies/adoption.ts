@@ -4,6 +4,11 @@ export const adoption: CaseStudy = {
   slug: "adoption",
   title: "Adoption and developer experience",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/adoption/dev-thumb.png",
+    alt: "Aurora reference site — Develop tab with props table and code samples",
+    fit: "cover",
+  },
   teaser:
     "Dual-audience docs, contribution workflow, and stack-specific starters so 36 components and 12 themes get used — not admired.",
   metrics: [
@@ -75,6 +80,22 @@ export const adoption: CaseStudy = {
     {
       heading: "What I shipped",
       body: "Dual-tab docs per component — Design answers when, Develop answers how. Three starter kits (React, Tailwind-only, CSS+theme.css) wire the correct theme import so backend-heavy teams do not improvise paths. Contribution flows through intake → triage → spec → implementation + docs → release notes → office-hours support.\n\nThe glossary (22 terms) deliberately gives designers and developers different definitions where discipline language diverges.",
+      images: [
+        {
+          label: "Design tab — anatomy, variants, and do-not examples",
+          aspect: "pair",
+          src: "/work/adoption/design-tab.png",
+          alt: "Component documentation Design tab with anatomy and variant matrix",
+          fit: "contain",
+        },
+        {
+          label: "Develop tab — imports, props, and code samples",
+          aspect: "pair",
+          src: "/work/adoption/develop-tab.png",
+          alt: "Component documentation Develop tab with props table and code samples",
+          fit: "contain",
+        },
+      ],
     },
     {
       heading: "Outcomes",

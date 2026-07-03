@@ -6,6 +6,11 @@ export const propper: CaseStudy = {
   teaser:
     "Built in forty-eight hours at an Into Design Systems hackathon. Figma shows a slice of what engineering needs — Propper checks prop completeness, token alignment, and teaches why gaps matter.",
   workRole: "Hackathon lead / product concept",
+  heroMedia: {
+    src: "/work/propper/hero.png",
+    alt: "Propper landing page — Figma component readiness audit for design-to-code handoff",
+    fit: "cover",
+  },
   metrics: [
     { label: "Build window", value: "48 hours" },
     { label: "Event", value: "Into DS hackathon" },
@@ -60,7 +65,7 @@ export const propper: CaseStudy = {
       isPrivate: true,
     },
   ],
-  relatedWork: ["aurora", "adoption", "audit"],
+  relatedWork: ["aurora", "adoption", "asset-gallery"],
   sections: [
     {
       heading: "Context",

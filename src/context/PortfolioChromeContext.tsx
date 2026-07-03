@@ -2,10 +2,13 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
+
+export const THEME_STUDIO_SEEN_KEY = "theme-studio-seen";
 
 type ChromeContextValue = {
   mobileNavOpen: boolean;
@@ -15,6 +18,9 @@ type ChromeContextValue = {
   themePanelOpen: boolean;
   setThemePanelOpen: (open: boolean) => void;
   toggleThemePanel: () => void;
+  /** True until the visitor dismisses the first-run theme studio callout. */
+  themeStudioIntro: boolean;
+  dismissThemeStudioIntro: () => void;
   chatOpen: boolean;
   setChatOpen: (open: boolean) => void;
   toggleChat: () => void;
@@ -25,7 +31,22 @@ const ChromeContext = createContext<ChromeContextValue | null>(null);
 export function PortfolioChromeProvider({ children }: { children: ReactNode }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [themePanelOpen, setThemePanelOpen] = useState(false);
+  const [themeStudioIntro, setThemeStudioIntro] = useState(
+    () => localStorage.getItem(THEME_STUDIO_SEEN_KEY) !== "1",
+  );
   const [chatOpen, setChatOpen] = useState(false);
+
+  // First visit: open theme studio after the hero settles so visitors see "Try me" in context.
+  useEffect(() => {
+    if (!themeStudioIntro) return;
+    const openTimer = window.setTimeout(() => setThemePanelOpen(true), 1400);
+    return () => window.clearTimeout(openTimer);
+  }, [themeStudioIntro]);
+
+  const dismissThemeStudioIntro = useCallback(() => {
+    localStorage.setItem(THEME_STUDIO_SEEN_KEY, "1");
+    setThemeStudioIntro(false);
+  }, []);
 
   const openMobileNav = useCallback(() => setMobileNavOpen(true), []);
   const closeMobileNav = useCallback(() => setMobileNavOpen(false), []);
@@ -44,6 +65,8 @@ export function PortfolioChromeProvider({ children }: { children: ReactNode }) {
       themePanelOpen,
       setThemePanelOpen,
       toggleThemePanel,
+      themeStudioIntro,
+      dismissThemeStudioIntro,
       chatOpen,
       setChatOpen,
       toggleChat,
@@ -54,6 +77,8 @@ export function PortfolioChromeProvider({ children }: { children: ReactNode }) {
       closeMobileNav,
       themePanelOpen,
       toggleThemePanel,
+      themeStudioIntro,
+      dismissThemeStudioIntro,
       chatOpen,
       toggleChat,
     ],

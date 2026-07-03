@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Registered so live slider updates repaint glass surfaces. */
+@property --glass-blur {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 16px;
+}
+
+@property --ambient-strength {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
 @layer base {
   :root {
     --background: 0deg 0% 100%;
@@ -53,6 +66,9 @@
     --spacing-12: calc(var(--spacing-unit) * 12);
     --spacing-16: calc(var(--spacing-unit) * 16);
     --spacing-24: calc(var(--spacing-unit) * 24);
+
+    --glass-blur: 16px;
+    --ambient-strength: 1;
   }
 
   .dark {
@@ -121,11 +137,11 @@
     /* light: no glow — just a faint accent-tinted lift shadow */
     --glass-shadow: hsl(var(--accent) / 0.1);
     --glass-glow: transparent;
-    --glass-backdrop: blur(var(--glass-blur, 16px)) saturate(180%)
-      brightness(1.06);
     background: var(--glass-tint);
-    backdrop-filter: var(--glass-backdrop);
-    -webkit-backdrop-filter: var(--glass-backdrop);
+    backdrop-filter: blur(var(--glass-blur, 16px)) saturate(180%)
+      brightness(1.06);
+    -webkit-backdrop-filter: blur(var(--glass-blur, 16px)) saturate(180%)
+      brightness(1.06);
     border: 1px solid var(--glass-rim);
     box-shadow:
       0 0 24px -6px var(--glass-glow),
@@ -147,8 +163,9 @@
     --glass-sheen: rgba(255, 255, 255, 0.08);
     --glass-shadow: rgba(0, 0, 0, 0.5);
     --glass-glow: hsl(var(--accent) / 0.16);
-    /* smoked: darken + slightly desaturate less than light mode */
-    --glass-backdrop: blur(var(--glass-blur, 16px)) saturate(150%)
+    backdrop-filter: blur(var(--glass-blur, 16px)) saturate(150%)
+      brightness(0.88);
+    -webkit-backdrop-filter: blur(var(--glass-blur, 16px)) saturate(150%)
       brightness(0.88);
   }
 
@@ -170,15 +187,10 @@
     );
   }
 
-  /* Real refraction where supported (Chromium): SVG displacement
-     on the backdrop. Same blur across tiers so the fallback only
-     loses the bend, never the frost. */
-  @supports (backdrop-filter: blur(16px) url(#liquid)) {
-    .glass-strong {
-      backdrop-filter: var(--glass-backdrop) url(#liquid);
-      -webkit-backdrop-filter: var(--glass-backdrop) url(#liquid);
-    }
-  }
+  /* Real refraction (SVG displacement via url(#liquid)) is added at
+     runtime by apply-glass-styles.ts, and only on Chromium: Safari and
+     Firefox parse the url() syntax but silently drop the entire
+     backdrop-filter, which kills the frost completely. */
 
   /* Hero: simple flat circle bed the portrait cutout rises out of. */
   .hero-circle {
@@ -244,8 +256,9 @@
       var(--pill-tint-a),
       var(--pill-tint-b)
     );
-    backdrop-filter: blur(10px) saturate(115%) brightness(1.05);
-    -webkit-backdrop-filter: blur(10px) saturate(115%) brightness(1.05);
+    backdrop-filter: blur(var(--glass-blur, 16px)) saturate(115%) brightness(1.05);
+    -webkit-backdrop-filter: blur(var(--glass-blur, 16px)) saturate(115%)
+      brightness(1.05);
     box-shadow:
       inset 0 0 0 1px var(--pill-rim),
       inset 0 1px 1px var(--pill-hi),
@@ -260,8 +273,9 @@
     --pill-rim: hsl(var(--accent) / 0.28);
     --pill-hi: rgba(255, 255, 255, 0.16);
     --pill-glow: hsl(var(--accent) / 0.2);
-    backdrop-filter: blur(10px) saturate(115%) brightness(1.1);
-    -webkit-backdrop-filter: blur(10px) saturate(115%) brightness(1.1);
+    backdrop-filter: blur(var(--glass-blur, 16px)) saturate(115%) brightness(1.1);
+    -webkit-backdrop-filter: blur(var(--glass-blur, 16px)) saturate(115%)
+      brightness(1.1);
   }
 
   /* Slow catch-light panning across the chip */
@@ -377,10 +391,12 @@
   /* ---------------------------------------------------------------
    * Ambient backdrop — drifting gradient orbs, recolored by theme hue
    * ------------------------------------------------------------- */
-  .ambient-orb {
+  .ambient-orb,
+  .ambient-orb-a,
+  .ambient-orb-b,
+  .ambient-orb-c {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(90px);
     will-change: transform;
     opacity: var(--ambient-strength, 1);
   }
@@ -390,6 +406,7 @@
     left: -10rem;
     width: 44rem;
     height: 44rem;
+    filter: blur(90px);
     background: radial-gradient(
       circle,
       hsl(var(--accent) / 0.09),

@@ -6,6 +6,11 @@ export const auroraReferenceWebsite: CaseStudy = {
   teaser:
     "A living prototype built from the same components it documents — Design and Develop tabs, token pages, and an Interaction Builder that ships on Aurora, not beside it.",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/aurora-reference/front-door.png",
+    alt: "Aurora reference site — component gallery, theme switcher, and search as the system's front door",
+    fit: "cover",
+  },
   metrics: [
     { label: "Doc surface", value: "Dual tab" },
     { label: "Dogfooding", value: "100%" },
@@ -69,6 +74,9 @@ export const auroraReferenceWebsite: CaseStudy = {
         {
           label: "Reference site home with theme switcher and component search",
           aspect: "wide",
+          src: "/work/aurora-reference/front-door.png",
+          alt: "Aurora reference site — component gallery, theme switcher, and search as the system's front door",
+          fit: "contain",
         },
       ],
     },
@@ -77,8 +85,18 @@ export const auroraReferenceWebsite: CaseStudy = {
       body: "Each component page splits into two audiences on purpose. The Design tab shows anatomy, variant matrix, spacing notes, and do-not examples — the things a designer needs in a review. The Develop tab shows imports, props tables, code samples, and accessibility expectations — the things an engineer needs at midnight.\n\nThey share the same live preview instance so neither side argues about a stale screenshot. When we add a variant, both tabs update in the same release train. Breaking changes ship with migration notes on the Develop tab before the semver tag lands.",
       images: [
         {
-          label: "Component page: Design tab vs Develop tab on the same preview",
+          label: "Design tab — anatomy, variants, and do-not examples",
           aspect: "pair",
+          src: "/work/aurora-reference/design-tab.png",
+          alt: "Component documentation Design tab with anatomy and variant matrix",
+          fit: "contain",
+        },
+        {
+          label: "Develop tab — imports, props, and code samples",
+          aspect: "pair",
+          src: "/work/aurora-reference/develop-tab.png",
+          alt: "Component documentation Develop tab with props table and code samples",
+          fit: "contain",
         },
       ],
     },
@@ -88,11 +106,14 @@ export const auroraReferenceWebsite: CaseStudy = {
     },
     {
       heading: "Living prototype, not a screenshot museum",
-      body: "Marketing sites for design systems often freeze PNGs and drift within a quarter. I refused that. The reference site is a Vite app that imports the same package consumers import. Theme switching loads real theme.css bundles from the twelve theme packages. Pattern pages compose multiple components the way production apps do — filters above DataView-like layouts, confirmation flows with correct action order.\n\nWhen BetUS Join, My Account, casino widgets, and wagering pools shipped Aurora in production, the reference site was where squads pointed new hires first. It was the system's front door: enter here, learn the vocabulary, leave with working imports.",
+      body: "Marketing sites for design systems often freeze PNGs and drift within a quarter. I refused that. The reference site is a Vite app that imports the same package consumers import. Theme switching loads real theme.css bundles from the twelve theme packages. Pattern pages compose multiple components the way production apps do — filters above data layouts, confirmation flows with correct action order.\n\nWhen customer-facing products shipped Aurora in production, the reference site was where squads pointed new hires first. It was the system's front door: enter here, learn the vocabulary, leave with working imports.",
       images: [
         {
           label: "Pattern page composing multiple Aurora components with live theme swap",
           aspect: "wide",
+          src: "/work/graphics/aurora-reference/live-pattern.svg",
+          alt: "Illustration of a pattern page composing multiple components with live theme switching",
+          fit: "contain",
         },
       ],
     },

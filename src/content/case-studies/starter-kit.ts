@@ -2,12 +2,12 @@ import type { CaseStudy } from "./types";
 
 export const starterKit: CaseStudy = {
   slug: "starter-kit",
-  title: "Wave — pilot to starter kit",
+  title: "Pilot to starter kit",
   teaser:
-    "Wave was the first real internal app on Luminis before thirty teams joined. Production feedback became guidelines, then starter kits and Cursor rules so patterns survived contact with actual workflows.",
+    "A production internal app was the first real consumer of Luminis. Feedback became guidelines, then starter kits and Cursor rules so patterns survived contact with actual workflows.",
   workRole: "Design system lead",
   metrics: [
-    { label: "Pilot app", value: "Wave" },
+    { label: "Pilot", value: "Production" },
     { label: "Outcome", value: "Starter kits" },
     { label: "Cursor rules", value: "Yes" },
     { label: "Typical devs", value: "1 FE" },
@@ -32,7 +32,7 @@ export const starterKit: CaseStudy = {
     {
       id: "guidelines",
       label: "Guidelines",
-      blurb: "Wave-derived UX and layout rules.",
+      blurb: "Pilot-derived UX and layout rules.",
       isPrivate: true,
     },
     {
@@ -64,7 +64,7 @@ export const starterKit: CaseStudy = {
     {
       title: "Pilot → pattern promotion (illustrative)",
       language: "md",
-      code: `1. Ship Wave with Luminis primitives
+      code: `1. Ship pilot with Luminis primitives
 2. Log UX debt and repeated compositions
 3. Promote repeated compositions to guidelines
 4. Encode in starter templates + Cursor rules
@@ -74,11 +74,11 @@ export const starterKit: CaseStudy = {
   sections: [
     {
       heading: "Context",
-      body: "Luminis needed proof in production before thirty teams depended on it. We chose Wave as the pilot because it had real users, real data density, and a motivated product owner willing to iterate publicly.\n\nThe goal was not a perfect demo app. It was a stress test that produced guidelines we could trust.",
+      body: "Luminis needed proof in production before thirty teams depended on it. We chose a live internal app with real users, real data density, and a motivated product owner willing to iterate publicly.\n\nThe goal was not a perfect demo app. It was a stress test that produced guidelines we could trust.",
     },
     {
       heading: "Problem and goals",
-      body: "Problems: big-bang rollouts without pilots hide edge cases until resentment sets in; guidelines written in a vacuum rarely match how admins work; AI-assisted coding without rules recreates old inconsistencies faster.\n\nGoals: ship Wave; extract durable patterns; encode them in starters and Cursor rules; prove the “PO plus one engineer” story.",
+      body: "Problems: big-bang rollouts without pilots hide edge cases until resentment sets in; guidelines written in a vacuum rarely match how admins work; AI-assisted coding without rules recreates old inconsistencies faster.\n\nGoals: ship the pilot; extract durable patterns; encode them in starters and Cursor rules; prove the PO plus one engineer story.",
     },
     {
       heading: "Audit and baseline",
@@ -86,11 +86,11 @@ export const starterKit: CaseStudy = {
     },
     {
       heading: "Foundations and tokens",
-      body: "Wave consumed the same semantic tokens as external-facing work where appropriate, with internal density tweaks documented. Starters wire theme imports by default so new repos cannot accidentally ship unstyled shells.\n\nToken literacy notes from Wave were folded into the internal docs site chapter on “why variables, not hex.”",
+      body: "The pilot consumed the same semantic tokens as external-facing work where appropriate, with internal density tweaks documented. Starters wire theme imports by default so new repos cannot accidentally ship unstyled shells.\n\nToken literacy notes from the pilot were folded into the internal docs chapter on why variables, not hex.",
     },
     {
       heading: "Components",
-      body: "Pilot pushed data tables, filter bars, side panels, and stacked forms. Where components bent, we filed issues against the library instead of letting Wave fork privately — that kept debt visible.\n\n[ADD SCREENSHOT: Wave screen using standardized table + filter pattern.]",
+      body: "The pilot pushed data tables, filter bars, side panels, and stacked forms. Where components bent, we filed issues against the library instead of letting the app fork privately — that kept debt visible.",
     },
     {
       heading: "Patterns",
@@ -102,15 +102,15 @@ export const starterKit: CaseStudy = {
     },
     {
       heading: "Governance and contribution",
-      body: "Changes to starters after Wave required a changelog entry because they affect every new app. Promotions from pilot learnings needed a named owner and a date so we did not accumulate mystery defaults.\n\nSnowflakes remain allowed if documented with expiry — same governance frame as Aurora.",
+      body: "Changes to starters after the pilot required a changelog entry because they affect every new app. Promotions from pilot learnings needed a named owner and a date so we did not accumulate mystery defaults.\n\nSnowflakes remain allowed if documented with expiry — same governance frame as Aurora.",
     },
     {
       heading: "Tooling and pipeline",
-      body: "Cursor rules capture the decisions Wave already validated: spacing scale for dense tables, default modal sizes, form validation timing. Developers using agents inherit the guardrails without re-reading thirty pages.\n\nCI templates stub lint for classnames and import order to match the starter.",
+      body: "Cursor rules capture the decisions the pilot already validated: spacing scale for dense tables, default modal sizes, form validation timing. Developers using agents inherit the guardrails without re-reading thirty pages.\n\nCI templates stub lint for classnames and import order to match the starter.",
     },
     {
       heading: "Adoption and enablement",
-      body: "After Wave, onboarding was “clone starter, rename, join office hours.” Teams brought screenshots; we mapped them to patterns before they invented new ones.\n\nSuccess signal: second and third teams shipped faster than Wave because the starter removed decision fatigue.",
+      body: "After the pilot, onboarding was clone starter, rename, join office hours. Teams brought screenshots; we mapped them to patterns before they invented new ones.\n\nSuccess signal: second and third teams shipped faster because the starter removed decision fatigue.",
     },
     {
       heading: "Metrics and outcomes",
@@ -118,7 +118,7 @@ export const starterKit: CaseStudy = {
     },
     {
       heading: "Reflections",
-      body: "Tradeoff: opinionated starters annoy edge cases. We document escape hatches and keep office hours open.\n\nWhat failed: an early starter tried to include every pattern at once. Fixed by splitting minimal vs advanced templates.\n\nRedo: instrument a simple survey at day thirty for each adopting team.\n\nNext: publish an internal “pattern diff” when Wave changes so downstream apps know what to pick up.",
+      body: "Tradeoff: opinionated starters annoy edge cases. We document escape hatches and keep office hours open.\n\nWhat failed: an early starter tried to include every pattern at once. Fixed by splitting minimal vs advanced templates.\n\nRedo: instrument a simple survey at day thirty for each adopting team.\n\nNext: publish an internal pattern diff when the pilot changes so downstream apps know what to pick up.",
     },
   ],
 };

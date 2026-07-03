@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f8f8"/>
+      <stop offset="100%" stop-color="#efefef"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)" rx="16"/>
+  
+  <text x="40" y="44" fill="#111" font-family="system-ui,sans-serif" font-size="18" font-weight="700">One component model / twelve theme packages</text>
+  <rect x="300" y="120" width="360" height="280" rx="16" fill="#fff" stroke="#ccc" filter="url(#shadow)"/>
+  <text x="420" y="170" fill="#111" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Same Button + Card</text>
+  <rect x="380" y="200" width="100" height="36" rx="18" fill="#1e3a5f"/><text x="410" y="223" fill="#fff" font-family="system-ui,sans-serif" font-size="12">Action</text>
+  
+  <rect x="40" y="160" width="200" height="200" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="60" y="192" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Brand A</text>
+  <text x="60" y="218" fill="#666" font-family="system-ui,sans-serif" font-size="13">theme.css</text>
+  <text x="60" y="240" fill="#666" font-family="system-ui,sans-serif" font-size="13">~40 decisions</text>
+  
+  <rect x="720" y="160" width="200" height="200" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="740" y="192" fill="#111" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Brand B</text>
+  <text x="740" y="218" fill="#666" font-family="system-ui,sans-serif" font-size="13">theme.css</text>
+  <text x="740" y="240" fill="#666" font-family="system-ui,sans-serif" font-size="13">Same API</text>
+</svg>

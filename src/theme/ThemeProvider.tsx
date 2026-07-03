@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, type ReactNode } from "react";
 import { ThemeContext } from "./use-theme";
 import { DEFAULTS, hueToTokens, type ThemeValues } from "./defaults";
+import { applyGlassStyles, normalizeGlassBlur } from "./apply-glass-styles";
 
 // v2: chromatic default hue + Bricolage Grotesque — bump so stale
 // saved defaults don't shadow the new look.
@@ -9,7 +10,20 @@ const STORAGE_KEY = "portfolio-theme-v2";
 function readStorage(): Partial<ThemeValues> {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as Partial<ThemeValues>) : {};
+    if (!raw) return {};
+    const saved = JSON.parse(raw) as Partial<ThemeValues>;
+    // Coerce numeric sliders — JSON may store them as strings.
+    if (saved.glassBlur != null) saved.glassBlur = Number(saved.glassBlur);
+    if (saved.ambientStrength != null) {
+      saved.ambientStrength = Number(saved.ambientStrength);
+    }
+    if (saved.textBase != null) saved.textBase = Number(saved.textBase);
+    if (saved.radius != null) saved.radius = Number(saved.radius);
+    if (saved.spacingUnit != null) saved.spacingUnit = Number(saved.spacingUnit);
+    if (saved.primaryHue != null) saved.primaryHue = Number(saved.primaryHue);
+    if (saved.accentHue != null) saved.accentHue = Number(saved.accentHue);
+    if (saved.saturation != null) saved.saturation = Number(saved.saturation);
+    return saved;
   } catch {
     return {};
   }
@@ -56,8 +70,13 @@ function applyToDom(v: ThemeValues) {
   s.setProperty("--radius-xl", `${v.radius + 0.5}rem`);
 
   // Effects
-  s.setProperty("--glass-blur", `${v.glassBlur}px`);
-  s.setProperty("--ambient-strength", `${v.ambientStrength}`);
+  const glassBlur = normalizeGlassBlur(v.glassBlur);
+  const ambientStrength = Number.isFinite(v.ambientStrength)
+    ? Math.max(0, Math.min(1, v.ambientStrength))
+    : DEFAULTS.ambientStrength;
+  s.setProperty("--glass-blur", `${glassBlur}px`);
+  s.setProperty("--ambient-strength", String(ambientStrength));
+  applyGlassStyles(glassBlur);
 
   // Spacing
   s.setProperty("--spacing-unit", `${v.spacingUnit}rem`);
@@ -69,7 +88,12 @@ function applyToDom(v: ThemeValues) {
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [values, setValues] = useState<ThemeValues>(() => {
     const saved = readStorage();
-    return { ...DEFAULTS, ...saved };
+    const merged = { ...DEFAULTS, ...saved };
+    merged.glassBlur = normalizeGlassBlur(merged.glassBlur);
+    if (!Number.isFinite(merged.ambientStrength)) {
+      merged.ambientStrength = DEFAULTS.ambientStrength;
+    }
+    return merged;
   });
 
   useEffect(() => {
@@ -80,6 +104,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setValues((prev) => {
       const next = { ...prev, ...partial };
       writeStorage(next);
+      applyToDom(next);
       return next;
     });
   }, []);
@@ -87,8 +112,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const reset = useCallback(() => {
     setValues(DEFAULTS);
     writeStorage(DEFAULTS);
-    document.documentElement.style.cssText = "";
-    document.documentElement.style.fontSize = `${DEFAULTS.textBase}px`;
+    applyToDom(DEFAULTS);
   }, []);
 
   return (

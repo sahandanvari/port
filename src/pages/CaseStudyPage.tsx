@@ -39,7 +39,6 @@ const richContent: Record<string, Record<string, ReactNode>> = {
       />
     ),
   },
-  audit: {},
   adoption: {
     "Adoption and enablement": (
       <MermaidDiagram
@@ -109,24 +108,6 @@ const templateDiagrams: Record<string, DiagramSlot[]> = {
       caption: "Operational phases mirrored in adoption programs",
     },
   ],
-  audit: [
-    {
-      after: "Audit and baseline",
-      chart: contributionFlowGated,
-      caption:
-        "How audit findings feed triage (system work vs local exception)",
-    },
-    {
-      after: "Foundations and tokens",
-      chart: tokenLayeringFlow,
-      caption: "Reference layering used when classifying styling debt",
-    },
-    {
-      after: "Metrics and outcomes",
-      chart: designSystemDeliveryTimeline,
-      caption: "Recommended program phases after baseline inventory",
-    },
-  ],
   luminis: [
     {
       after: "Foundations and tokens",
@@ -180,14 +161,20 @@ const templateDiagrams: Record<string, DiagramSlot[]> = {
   ],
   "asset-gallery": [
     {
-      after: "Tooling and pipeline",
-      chart: tokenPipeline,
-      caption: "Operational pipeline analogy — crawl → describe → index",
+      after: "Inventory and classification",
+      chart: contributionFlowGated,
+      caption:
+        "How inventory findings feed triage (system work vs local exception)",
     },
     {
-      after: "Metrics and outcomes",
+      after: "What I built",
+      chart: tokenPipeline,
+      caption: "Crawl → describe → index — shared spine for gallery and workbook",
+    },
+    {
+      after: "Outcomes",
       chart: designSystemDeliveryTimeline,
-      caption: "Program timeline tied to audit burn-down",
+      caption: "Program timeline from baseline inventory through burn-down",
     },
   ],
   propper: [

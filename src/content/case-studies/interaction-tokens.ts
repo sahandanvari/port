@@ -6,6 +6,11 @@ export const interactionTokens: CaseStudy = {
   teaser:
     "I stopped arguing about hover in Slack. Twelve roles in a text file drive ±10/±20 HSL steps, transparent overlays, inv- variants, and a live Interaction Builder shipped in PR 18417.",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/interaction-tokens/interaction-builder.png",
+    alt: "Interaction Builder — live hover and active preview per role on the reference site",
+    fit: "cover",
+  },
   metrics: [
     { label: "Named roles", value: "12" },
     { label: "Hover delta", value: "±10 L" },
@@ -100,6 +105,15 @@ nav-foreground-medium`,
     {
       heading: "Twelve roles, one algorithm",
       body: "interaction_tokens.txt is intentionally plain — one role per line, no JSON ceremony. The Python generator looks up each role’s base value and emits --role-hover and --role-active.\n\nSolid fills use HSL lightness shifts: hover ±10, active ±20 on the L channel. That is simple to explain in a workshop and simple to regression-test when a brand remaps primaries.\n\nRoles cover buttons, inputs, tabs, navigation, and CTA stacks (cta-1 through cta-3) without exploding into per-component permutations.",
+      images: [
+        {
+          label: "Twelve interaction roles and generated hover/active matrix",
+          aspect: "wide",
+          src: "/work/interaction-tokens/role-matrix.png",
+          alt: "Interaction token role matrix showing generated hover and active states",
+          fit: "contain",
+        },
+      ],
     },
     {
       heading: "Transparent overlays",
@@ -110,9 +124,11 @@ nav-foreground-medium`,
       body: "Prose did not stick. I shipped an Interaction Builder on the reference website (PR 18417) so engineers tweak a role, see computed hover/active, and compare default vs inv- outputs live. It is the teachable moment I wished we had earlier.\n\nWorkshops now trace a button from Figma variant → role name → generated CSS. When someone asks for a one-off darker state in Slack, I send the builder link — it converts opinion into a governed change request.",
       images: [
         {
-          label:
-            "Interaction Builder on the reference site — live hover/active preview per role",
+          label: "Interaction Builder — live hover/active preview per role",
           aspect: "wide",
+          src: "/work/interaction-tokens/interaction-builder.png",
+          alt: "Interaction Builder — live hover and active preview per role on the reference site",
+          fit: "contain",
         },
       ],
     },

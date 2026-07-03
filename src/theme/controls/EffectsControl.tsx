@@ -24,6 +24,9 @@ export function EffectsControl() {
           step={2}
           value={values.glassBlur}
           onChange={(e) => update({ glassBlur: Number(e.target.value) })}
+          onInput={(e) =>
+            update({ glassBlur: Number(e.currentTarget.value) })
+          }
           className="mt-1 w-full accent-foreground"
         />
       </div>
@@ -43,6 +46,9 @@ export function EffectsControl() {
           value={values.ambientStrength}
           onChange={(e) =>
             update({ ambientStrength: Number(e.target.value) })
+          }
+          onInput={(e) =>
+            update({ ambientStrength: Number(e.currentTarget.value) })
           }
           className="mt-1 w-full accent-foreground"
         />

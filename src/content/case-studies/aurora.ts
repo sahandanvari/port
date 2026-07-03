@@ -4,6 +4,11 @@ export const aurora: CaseStudy = {
   slug: "aurora",
   title: "Aurora design system",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/aurora/hero.png",
+    alt: "Aurora design system — component library, theme packages, and reference documentation",
+    fit: "cover",
+  },
   teaser:
     "I led Aurora from Figma specs through 36 components, 12 theme packages, and 98 releases — with a reference site that dogfoods the same library it documents.",
   metrics: [
@@ -79,14 +84,11 @@ export const aurora: CaseStudy = {
       body: "I insisted on Figma-first delivery. Designers spec anatomy, variants, and state matrices in the library before engineering starts. Code is downstream — it proves the spec, it does not invent it. That order cut rework: when a variant is missing in Figma, we find it in review, not in QA.\n\nEach of the 36 components ships with a registry contract (whenToUse, props, accessibility notes, Figma component keys, Storybook paths). Agents and humans read the same JSON. Storybook and the reference site adopt the matched story as skeleton; Figma supplies copy and structure hints.",
       images: [
         {
-          label:
-            "Figma button sheet — variant matrix, states, and dev-mode metadata before implementation",
+          label: "Figma button sheet — variant matrix and states before implementation",
           aspect: "wide",
-        },
-        {
-          label:
-            "Figma library analytics — 50,000+ button inserts per year, low detach rate",
-          aspect: "figure",
+          src: "/work/graphics/aurora/figma-first.svg",
+          alt: "Diagram of Figma-first workflow from variant matrix to implementation",
+          fit: "contain",
         },
       ],
     },
@@ -95,19 +97,18 @@ export const aurora: CaseStudy = {
       body: "The library now covers layout, navigation, data display, feedback, forms, overlays, and typography — 36 components across the registry. Releases are frequent and semver-governed: 98 published versions to date, each paired with changelog notes and migration guidance when APIs change.\n\nTwelve theme packages encode brand independence on three axes — palette, typeface, radius — without multiplying component variants. Consumers import one theme.css per deployment; components resolve semantic roles, not literal brand colors.\n\nThe reference website dogfoods @ppt/aurora. If a doc example breaks, we feel it in the same PR train as the library.",
       images: [
         {
-          label:
-            "Theme packages folder structure — css/ and tailwind/ per brand",
+          label: "Aurora design system — components, themes, and documentation surface",
+          aspect: "wide",
+          src: "/work/aurora/hero.png",
+          alt: "Aurora design system — component library, theme packages, and reference documentation",
+          fit: "contain",
+        },
+        {
+          label: "Theme packages — css/ and tailwind/ per brand",
           aspect: "figure",
-        },
-        {
-          label:
-            "Theme package picker on the reference site — twelve brands, one component model",
-          aspect: "pair",
-        },
-        {
-          label:
-            "Doc analytics — top component pages and search queries (directional adoption proxy)",
-          aspect: "pair",
+          src: "/work/graphics/aurora/theme-packages.svg",
+          alt: "Folder structure diagram for per-brand theme packages",
+          fit: "contain",
         },
       ],
     },

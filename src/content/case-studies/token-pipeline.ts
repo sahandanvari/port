@@ -6,6 +6,11 @@ export const tokenPipeline: CaseStudy = {
   teaser:
     "I replaced Style Dictionary with a Python generator: Token Studio in, flat theme.css and Tailwind v4 @theme out — plus inv- inverse tokens and interaction states from a twelve-line allowlist.",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/token-pipeline/custom-token-build.png",
+    alt: "Custom token build pipeline — Token Studio export through generator to theme packages",
+    fit: "cover",
+  },
   metrics: [
     { label: "Generator", value: "Python" },
     { label: "Theme packages", value: "12" },
@@ -101,6 +106,15 @@ export const tokenPipeline: CaseStudy = {
     {
       heading: "From Tokens Studio to flat CSS",
       body: "The flow is deliberate and boring to operate: designers commit Token Studio JSON, CI runs the generator, twelve theme packages land with paired css/ and tailwind/ trees. Each package emits a single theme.css consumers can link or import — no manual second pass.\n\nWhen a new primitive appears in Studio, detection logic appends it to exports without someone editing a second file. That “add once, propagate everywhere” rule is what kept six parallel CSS approaches from drifting again.",
+      images: [
+        {
+          label: "Token Studio → Python generator → theme packages",
+          aspect: "wide",
+          src: "/work/token-pipeline/custom-token-build.png",
+          alt: "Custom token build pipeline — Token Studio export through generator to theme packages",
+          fit: "contain",
+        },
+      ],
     },
     {
       heading: "Tailwind v4 @theme output",
@@ -108,12 +122,14 @@ export const tokenPipeline: CaseStudy = {
     },
     {
       heading: "Inverse tokens (inv-)",
-      body: "Some products are dark-native — sportsbook chrome, operational dashboards — but still need an accessibility-oriented dark mode toggle. Light/dark naming collided with that reality, so I generate a parallel inv- family for every semantic color.\n\nDefault surfaces use --primary; dark-native surfaces can bind --inv-primary so an OS-level dark preference does not double-invert. The generator mirrors the full semantic set — not a hand-maintained subset — which is why theme swaps stay trustworthy across brands.",
+      body: "Some products are dark-native — immersive chrome, operational dashboards — but still need an accessibility-oriented dark mode toggle. Light/dark naming collided with that reality, so I generate a parallel inv- family for every semantic color.\n\nDefault surfaces use --primary; dark-native surfaces can bind --inv-primary so an OS-level dark preference does not double-invert. The generator mirrors the full semantic set — not a hand-maintained subset — which is why theme swaps stay trustworthy across brands.",
       images: [
         {
-          label:
-            "Side-by-side: default surface vs inv- surface with the same Button component",
+          label: "Default surface vs inv- surface with the same Button component",
           aspect: "pair",
+          src: "/work/graphics/token-pipeline/inverse-surfaces.svg",
+          alt: "Diagram showing default and inverse token surfaces on the same button component",
+          fit: "contain",
         },
       ],
     },

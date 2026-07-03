@@ -1,12 +1,16 @@
 import { next } from "@vercel/edge";
 
+/** Maintenance gate disabled — site is public. */
+const MAINTENANCE_UNTIL_MS = 0;
+
 export const config = {
-  matcher: ["/mastermind", "/mastermind/:path*"],
+  matcher: ["/((?!maintenance\\.html|favicon\\.svg).*)"],
 };
 
-export default function middleware(request: Request) {
+function mastermindAuth(request: Request): Response {
   const expectedUser = process.env.BASIC_AUTH_USER || "sahand";
-  const expectedPass = process.env.BASIC_AUTH_PASSWORD || process.env.DASHBOARD_PASSWORD;
+  const expectedPass =
+    process.env.BASIC_AUTH_PASSWORD || process.env.DASHBOARD_PASSWORD;
 
   if (!expectedPass) {
     return new Response("Set BASIC_AUTH_PASSWORD in Vercel project settings.", {
@@ -35,4 +39,30 @@ export default function middleware(request: Request) {
       "WWW-Authenticate": 'Basic realm="YouTube Mastermind", charset="UTF-8"',
     },
   });
+}
+
+function maintenanceRedirect(request: Request): Response | null {
+  if (Date.now() >= MAINTENANCE_UNTIL_MS) return null;
+
+  const url = new URL(request.url);
+  if (url.pathname === "/maintenance.html") return null;
+
+  const previewKey = process.env.MAINTENANCE_PREVIEW_KEY;
+  if (previewKey && url.searchParams.get("preview") === previewKey) {
+    return null;
+  }
+
+  return Response.redirect(new URL("/maintenance.html", url.origin), 307);
+}
+
+export default function middleware(request: Request) {
+  const maintenance = maintenanceRedirect(request);
+  if (maintenance) return maintenance;
+
+  const url = new URL(request.url);
+  if (url.pathname === "/mastermind" || url.pathname.startsWith("/mastermind/")) {
+    return mastermindAuth(request);
+  }
+
+  return next();
 }

@@ -10,26 +10,34 @@ import { SpacingControl } from "./controls/SpacingControl";
 import { EffectsControl } from "./controls/EffectsControl";
 
 export function ThemePanel() {
-  const { themePanelOpen: open, setThemePanelOpen: setOpen } =
-    usePortfolioChrome();
+  const {
+    themePanelOpen: open,
+    setThemePanelOpen: setOpen,
+    themeStudioIntro,
+    dismissThemeStudioIntro,
+  } = usePortfolioChrome();
   const { values, update, reset } = useTheme();
+
+  const closePanel = () => {
+    setOpen(false);
+    dismissThemeStudioIntro();
+  };
 
   return (
     <>
-      {/* Panel drawer — triggered from the header palette icon */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
+            {/* Transparent click-catcher — no scrim/blur so the live
+                theme preview stays fully visible while tweaking. */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+              onClick={closePanel}
+              className="fixed inset-0 z-40"
             />
 
-            {/* Drawer */}
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
@@ -38,13 +46,12 @@ export function ThemePanel() {
               className="fixed top-0 left-0 z-50 h-full w-80 overflow-y-auto border-r border-border bg-background shadow-2xl"
             >
               <div className="p-5">
-                {/* Header */}
                 <div className="flex items-center justify-between mb-2">
                   <h2 className="font-heading text-sm font-semibold">
                     Theme studio
                   </h2>
                   <button
-                    onClick={() => setOpen(false)}
+                    onClick={closePanel}
                     className="p-1 rounded hover:bg-muted transition-colors"
                     aria-label="Close"
                   >
@@ -63,12 +70,33 @@ export function ThemePanel() {
                   </button>
                 </div>
 
-                {/* What this is */}
-                <p className="mb-4 text-[11px] leading-relaxed text-muted-foreground">
-                  This whole site runs on design tokens — colors, type, glass,
-                  radius and spacing are variables, not hardcoded styles.
-                  Change anything here and every surface updates live.
-                </p>
+                {themeStudioIntro ? (
+                  <div
+                    role="status"
+                    className="mb-4 rounded-xl border border-accent/30 bg-accent/10 px-3.5 py-3"
+                  >
+                    <p className="text-xs font-semibold text-foreground">
+                      Try me
+                    </p>
+                    <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+                      This portfolio runs on design tokens. Tweak colors, type,
+                      glass, radius, and spacing — every surface updates live.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => update(randomizeTheme())}
+                      className="mt-2.5 text-[11px] font-medium text-accent-foreground underline underline-offset-2 hover:opacity-80"
+                    >
+                      Or hit Surprise me below
+                    </button>
+                  </div>
+                ) : (
+                  <p className="mb-4 text-[11px] leading-relaxed text-muted-foreground">
+                    This whole site runs on design tokens — colors, type, glass,
+                    radius and spacing are variables, not hardcoded styles.
+                    Change anything here and every surface updates live.
+                  </p>
+                )}
 
                 {/* Full-theme randomizer */}
                 <button

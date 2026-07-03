@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f8f8"/>
+      <stop offset="100%" stop-color="#efefef"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)" rx="16"/>
+  
+  <text x="40" y="44" fill="#111" font-family="system-ui,sans-serif" font-size="18" font-weight="700">40 composition patterns</text>
+  
+  <rect x="40" y="70" width="270" height="170" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="60" y="102" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">list-detail</text>
+  <text x="60" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Table + drawer</text>
+  <text x="60" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Keyboard focus path</text>
+  
+  <rect x="330" y="70" width="270" height="170" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="350" y="102" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">settings-anatomy</text>
+  <text x="350" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Sections + save bar</text>
+  <text x="350" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Validation timing</text>
+  
+  <rect x="620" y="70" width="270" height="170" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="640" y="102" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">empty-states</text>
+  <text x="640" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Icon + action</text>
+  <text x="640" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Retry on error</text>
+  
+  <rect x="40" y="270" width="850" height="220" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="60" y="302" fill="#111" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Pattern contract</text>
+  <text x="60" y="328" fill="#666" font-family="system-ui,sans-serif" font-size="13">Components listed in order</text>
+  <text x="60" y="350" fill="#666" font-family="system-ui,sans-serif" font-size="13">whenToUse / whenNotToUse</text>
+  <text x="60" y="372" fill="#666" font-family="system-ui,sans-serif" font-size="13">Linked to registry slug JSON</text>
+  <rect x="70" y="360" width="760" height="8" rx="4" fill="#e5e5e5"/>
+  <rect x="70" y="360" width="520" height="8" rx="4" fill="#222"/>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f8f8"/>
+      <stop offset="100%" stop-color="#efefef"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)" rx="16"/>
+  
+  <text x="40" y="44" fill="#111" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Before / After</text>
+  
+  <rect x="40" y="70" width="260" height="200" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="60" y="102" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">App A</text>
+  <text x="60" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Top tabs</text>
+  <text x="60" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Loose spacing</text>
+  <text x="60" y="172" fill="#666" font-family="system-ui,sans-serif" font-size="13">Custom modal</text>
+  
+  <rect x="330" y="70" width="260" height="200" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="350" y="102" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">App B</text>
+  <text x="350" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Side rail</text>
+  <text x="350" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Dense table</text>
+  <text x="350" y="172" fill="#666" font-family="system-ui,sans-serif" font-size="13">Different forms</text>
+  
+  <rect x="620" y="70" width="260" height="200" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="640" y="102" fill="#222" font-family="system-ui,sans-serif" font-size="14" font-weight="600">App C</text>
+  <text x="640" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Hybrid nav</text>
+  <text x="640" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Mixed tokens</text>
+  <text x="640" y="172" fill="#666" font-family="system-ui,sans-serif" font-size="13">One-off CSS</text>
+  <rect x="330" y="310" width="300" height="180" rx="14" fill="#111"/>
+  <text x="360" y="350" fill="#fff" font-family="system-ui,sans-serif" font-size="15" font-weight="600">Shared Luminis shell</text>
+  <text x="360" y="378" fill="#ccc" font-family="system-ui,sans-serif" font-size="13">One nav model / one table pattern</text>
+  <text x="360" y="406" fill="#ccc" font-family="system-ui,sans-serif" font-size="13">Documented forms / token-backed UI</text>
+</svg>

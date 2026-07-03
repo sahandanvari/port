@@ -8,7 +8,6 @@ import { tokenPipeline } from "./token-pipeline";
 import { interactionTokens } from "./interaction-tokens";
 import { multibrand } from "./multibrand";
 import { adoption } from "./adoption";
-import { audit } from "./audit";
 import { assetGallery } from "./asset-gallery";
 import { propper } from "./propper";
 import type { CaseStudy } from "./types";
@@ -25,7 +24,6 @@ export const caseStudies: CaseStudy[] = [
   auroraReferenceWebsite,
   componentRegistry,
   adoption,
-  audit,
   assetGallery,
   propper,
 ];

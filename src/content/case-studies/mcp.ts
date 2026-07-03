@@ -6,6 +6,11 @@ export const mcp: CaseStudy = {
   teaser:
     "Eighteen Aurora MCP tools and a three-role workflow — product owner, designer, developer — so agents read contracts before they write components, not after.",
   workRole: "Design system lead",
+  heroMedia: {
+    src: "/work/mcp/mcp-demo.png",
+    alt: "MCP workflow — Figma sketch resolved to responsive Aurora dialog via registry tools",
+    fit: "cover",
+  },
   metrics: [
     { label: "Aurora tools", value: "18" },
     { label: "Workflow roles", value: "3" },
@@ -67,18 +72,24 @@ export const mcp: CaseStudy = {
       body: "Once Cursor became the default internal IDE, I watched squads generate screens in minutes that would have taken days — and import the wrong button, invent a modal from divs, or paste Figma MCP output as production code. Humans had the same habits, but agents amplified volume. A bad pattern in one prompt became a bad pattern in fifty files before anyone opened Storybook.\n\nI did not try to ban agents. I built guardrails they could not skip: an Aurora MCP server that reads the same contracts humans should read, wired into the Figma-to-code workflow as a mandatory first step.",
       images: [
         {
-          label: "Agent output without vs with registry lookup — side by side",
+          label: "Agent output without vs with registry lookup",
           aspect: "pair",
+          src: "/work/graphics/mcp/guardrails-comparison.svg",
+          alt: "Side by side comparison of agent output with and without registry guardrails",
+          fit: "contain",
         },
       ],
     },
     {
       heading: "Eighteen tools, one spine",
-      body: "The server exposes eighteen Aurora tools. They cover token inventory, component contracts, composition patterns, global rules, Figma component key mapping, Storybook CSF snippets, and feature registries for product domains like betslip and lobby. Each tool returns structured JSON from the monorepo — not prose summaries that drift.\n\nThe critical path for implementation is aurora_resolve_from_figma: extract pattern keywords from a design, match a Storybook story, return the skeleton. Then aurora_get_components and aurora_get_global_rules fill gaps. The design-rules say storybook-is-skeleton: the matched story defines chrome; Figma overrides are not applied unless the brief explicitly asks for pixel parity. That single rule eliminated half the className spam I was reviewing in PRs.",
+      body: "The server exposes eighteen Aurora tools. They cover token inventory, component contracts, composition patterns, global rules, Figma component key mapping, Storybook CSF snippets, and feature registries for product domains. Each tool returns structured JSON from the monorepo — not prose summaries that drift.\n\nThe critical path for implementation is aurora_resolve_from_figma: extract pattern keywords from a design, match a Storybook story, return the skeleton. Then aurora_get_components and aurora_get_global_rules fill gaps. The design-rules say storybook-is-skeleton: the matched story defines chrome; Figma overrides are not applied unless the brief explicitly asks for pixel parity. That single rule eliminated half the className spam I was reviewing in PRs.",
       images: [
         {
-          label: "MCP tool list and resolve_from_figma flow diagram",
+          label: "MCP tool list and resolve_from_figma flow",
           aspect: "wide",
+          src: "/work/graphics/mcp/tool-flow.svg",
+          alt: "Flow diagram from Figma frame through MCP resolve to Storybook skeleton",
+          fit: "contain",
         },
       ],
     },
@@ -89,19 +100,16 @@ export const mcp: CaseStudy = {
         {
           label:
             "MCP demo: napkin-sketch dialog → built responsive Aurora dialog (modal desktop / drawer mobile)",
-          aspect: "pair",
+          aspect: "wide",
+          src: "/work/mcp/mcp-demo.png",
+          alt: "MCP workflow — Figma sketch resolved to responsive Aurora dialog via registry tools",
+          fit: "contain",
         },
       ],
     },
     {
       heading: "Registry as the machine-readable law",
       body: "MCP tools are only as good as the registry behind them. Component JSON files carry whenToUse, whenNotToUse, props, and accessibility notes. Composition patterns name the components and rules for assemblies like confirmation dialogs and data tables. Global rules encode blockers — action group button order, no hand-rolled primitives when an export exists.\n\nWhen an agent calls aurora_get_global_rules before shipping, blocker violations surface as structured findings, not linter noise after the fact. That is the same governance frame we use for human contributors, just callable at generation time.",
-      images: [
-        {
-          label: "Global rules response showing blocker vs advisory entries",
-          aspect: "figure",
-        },
-      ],
     },
     {
       heading: "Luminis parity and internal apps",

@@ -13,10 +13,9 @@ Valid routes (use exact paths):
 - /work/luminis — Luminis internal system (frozen shadcn, Wave pilot, starters)
 - /work/token-pipeline — Python token build, flatten_tokens, dual output
 - /work/interaction-tokens — Interaction roles, hover/active generation, default vs dark accessibility
-- /work/multibrand — Multibrand theming, theme.css swap, audit tie-in
+- /work/multibrand — Multibrand theming, theme.css swap, inventory tie-in
 - /work/adoption — Adoption, docs, starter kits, office hours
-- /work/audit — Enterprise audit 13 repos, 510 items, tiers T0–T4
-- /work/asset-gallery — AI asset gallery, semantic search, dedupe
+- /work/asset-gallery — Enterprise inventory (13 repos, 510 items, T0–T4) + AI gallery, semantic search, dedupe
 - /work/propper — Hackathon handoff audit prototype
 - /work/starter-kit — Wave pilot to starter kit and Cursor rules
 - /writing — Writing index

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f8f8"/>
+      <stop offset="100%" stop-color="#efefef"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)" rx="16"/>
+  
+  
+  <rect x="40" y="70" width="400" height="400" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="60" y="102" fill="#b45309" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Figma screenshot</text>
+  <text x="60" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">Static PNG</text>
+  <text x="60" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Drifts in a quarter</text>
+  <text x="60" y="172" fill="#666" font-family="system-ui,sans-serif" font-size="13">No whenToUse</text>
+  
+  <rect x="520" y="70" width="400" height="400" rx="12" fill="#fff" stroke="#ddd" filter="url(#shadow)"/>
+  <text x="540" y="102" fill="#111" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Registry JSON</text>
+  <text x="540" y="128" fill="#666" font-family="system-ui,sans-serif" font-size="13">whenToUse / whenNotToUse</text>
+  <text x="540" y="150" fill="#666" font-family="system-ui,sans-serif" font-size="13">Props + a11y notes</text>
+  <text x="540" y="172" fill="#666" font-family="system-ui,sans-serif" font-size="13">Humans + agents + CI</text>
+  <text x="480" y="280" fill="#111" font-family="system-ui,sans-serif" font-size="28" font-weight="700">-&gt;</text>
+</svg>
