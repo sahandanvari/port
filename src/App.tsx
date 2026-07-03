@@ -12,6 +12,7 @@ import { GlassNav } from "@/components/GlassNav";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { PortfolioLayout } from "@/components/PortfolioLayout";
 import { PortfolioChromeProvider } from "@/context/PortfolioChromeContext";
+import { UnderConstructionBanner } from "@/components/UnderConstructionBanner";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <AmbientBackground />
           <GlassNav />
           <ThemePanel />
+          <UnderConstructionBanner />
           <Routes>
             <Route element={<PortfolioLayout />}>
               <Route path="/" element={<HomePage />} />
